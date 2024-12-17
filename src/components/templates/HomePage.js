@@ -1,8 +1,10 @@
 import Image from "next/image";
+import Banner from "@/components/module/Banner";
 
 function HomePage() {
     return(
         <>
+            {/*<Banner/>*/}
             <footer className="flex items-center bottom-0 py-8 px-10 lg:p-0 bg-[#fff] dark:bg-slate-800 mt-10">
                 <div className="container flex mx-auto px-10 lg:p-0 w-full border-t">
                     <div className="container flex flex-col lg:flex-row items-center justify-between w-full lg:w-[1270px] mx-auto mt-8 lg:my-8 gap-12 lg:gap-0">

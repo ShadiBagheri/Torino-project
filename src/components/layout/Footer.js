@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function Footer() {
     return(
@@ -7,20 +8,20 @@ function Footer() {
                 <div className="container flex items-center justify-between w-full lg:w-[500px]">
                     <div className="flex flex-col lg:ml-20">
                         <h1 className="text-[26px] md:text-3xl lg:text-2xl font-semibold text-[#282828] dark:text-white">تورینو</h1>
-                        <div className="mt-2 lg:mt-5">
-                            <p className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white">درباره ما</p>
-                            <p className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white">تماس با ما</p>
-                            <p className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white">چرا تورینو</p>
-                            <p className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white">بیمه مسافرتی</p>
+                        <div className="flex flex-col mt-2 lg:mt-5">
+                            <Link className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white" href="/about">درباره ما</Link>
+                            <Link className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white" href="/contact">تماس با ما</Link>
+                            <Link className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white" href="/">چرا تورینو</Link>
+                            <Link className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white" href="/">بیمه مسافرتی</Link>
                         </div>
                     </div>
                     <div className="flex flex-col">
                         <h1 className="text-[26px] md:text-3xl lg:text-2xl font-semibold text-[#282828] dark:text-white">خدمات مشتریان</h1>
-                        <div className="mt-2 lg:mt-5">
-                            <p className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white">پشتیبانی آنلاین</p>
-                            <p className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white">راهنمای خرید</p>
-                            <p className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white">راهنمای استرداد</p>
-                            <p className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white">پرسش و پاسخ</p>
+                        <div className="flex flex-col mt-2 lg:mt-5">
+                            <Link className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white" href="/">پشتیبانی آنلاین</Link>
+                            <Link className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white" href="/">راهنمای خرید</Link>
+                            <Link className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white" href="/">راهنمای استرداد</Link>
+                            <Link className="mt-2 md:mt-3 text-xl md:text-2xl lg:text-lg font-normal text-[#282828] dark:text-white" href="/">پرسش و پاسخ</Link>
                         </div>
                     </div>
                 </div>
