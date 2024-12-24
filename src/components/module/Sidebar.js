@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-
 import Image from "next/image";
 //Icons
 import { RiHome5Fill } from "react-icons/ri";
@@ -17,7 +16,7 @@ function Sidebar(){
     const sidebarHandler = () => setSidebar(!sidebar);
 
     const closeHandler = () => {
-        setSidebar(close)
+        setSidebar(close);
     }
     return(
         <div className="flex flex-col w-full lg:hidden mx-auto relative">
@@ -29,7 +28,7 @@ function Sidebar(){
                     <Image className="w-[40px] h-[40px] md:w-[45px] md:h-[45px] z-0" src="/images/signin.png" width={40} height={40} alt="signin"/>
                 </button>
             </div>
-            {/*/!* Sidebar *!/ transition and transform have problem*/}
+            {/* Sidebar */}
             {sidebar ?
                 <div onClick={closeHandler} className="w-full h-full top-0 start-0 backdrop-blur-sm bg-black/20 fixed transition-all">
                     <div className="md:w-[250px] h-full py-10 px-3 rounded-tl-[12px] rounded-bl-[12px] z-10 bg-[#fff] absolute">

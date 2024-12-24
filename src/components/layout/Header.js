@@ -1,12 +1,17 @@
 "use client";
+
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 //Module
 import Sidebar from "@/components/module/Sidebar";
-import {usePathname} from "next/navigation";
+import NavButton from "@/components/module/NavButton";
+
 
 function Header() {
     const pathName = usePathname();
+    const [mobile, setMobile] = useState("");
 
     return(
         <header className="container flex items-center w-full mx-auto h-[64px] md:h-[70px] lg:h-[74px] py-3 px-10 lg:px-0 bg-[#fff] shadow-md dark:bg-slate-800 dark:shadow-white">
@@ -40,15 +45,7 @@ function Header() {
                         </ul>
                     </nav>
                 </div>
-                <button className="container flex items-center justify-between w-[166px] h-[44px] p-2 border-2 border-solid border-[#28A745] rounded-[8px]">
-                    <Image className="mr-2" src="/images/profile.png" width={20} height={20} alt="login-icon"/>
-                    <div className="flex w-[108px] h-[28px]">
-                        <p className="text-center text-lg font-medium text-[#28A745]">ورود
-                            <span className="mx-1">|</span>
-                            ثبت نام
-                        </p>
-                    </div>
-                </button>
+                <NavButton mobile={mobile} setMobile={setMobile}/>
             </div>
         </header>
     )

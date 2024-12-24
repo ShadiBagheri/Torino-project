@@ -36,9 +36,9 @@ function Footer() {
                             <Image className="w-[60px] h-[65px] md:w-[65px] md:h-[70px] lg:w-[71px] lg:h-[74px]" src="/images/passenger.png" width={71} height={74} alt="passenger-logo"/>
                         </div>
                         <div className="flex gap-5 md:gap-10 lg:gap-10">
-                            <Image className="w-[60px] h-[65px] md:w-[65px] md:h-[70px] lg:w-[71px] lg:h-[74px]" src="/images/qrcode.png" width={68} height={74} alt="qrcode-logo"/>
-                            <Image className="w-[60px] h-[65px] md:w-[65px] md:h-[70px] lg:w-[71px] lg:h-[74px]" src="/images/samandehi.png" width={67} height={74} alt="samandehi-logo"/>
-                            <Image className="w-[60px] h-[65px] md:w-[65px] md:h-[70px] lg:w-[71px] lg:h-[74px]" src="/images/aria.png" width={68} height={74} alt="aria-logo"/>
+                            <Image className="w-[60px] h-[65px] md:w-[65px] md:h-[70px] lg:w-[71px] lg:h-[74px]" src="/images/qrcode.png" width={71} height={74} alt="qrcode-logo"/>
+                            <Image className="w-[60px] h-[65px] md:w-[65px] md:h-[70px] lg:w-[71px] lg:h-[74px]" src="/images/samandehi.png" width={71} height={74} alt="samandehi-logo"/>
+                            <Image className="w-[60px] h-[65px] md:w-[65px] md:h-[70px] lg:w-[71px] lg:h-[74px]" src="/images/aria.png" width={71} height={74} alt="aria-logo"/>
                         </div>
                     </div>
                 </div>
