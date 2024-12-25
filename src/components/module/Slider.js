@@ -15,7 +15,7 @@ import Image from "next/image";
 function Slider() {
     return (
         <div className="flex w-full">
-            <div className="flex items-center justify-between w-[1270px] h-[570px] mt-16 mx-auto px-14">
+            <div className="flex items-center justify-between w-[1270px] h-[570px] mt-10 mx-auto px-14">
                 <div className="flex flex-col items-start">
                     <div className="flex">
                         <div className=" relative">

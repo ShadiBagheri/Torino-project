@@ -1,29 +1,29 @@
 "use client";
-
-import { useEffect, useState } from "react";
-import { useGetTours } from "@/core/services/queries";
+//
+// import { useEffect, useState } from "react";
+// import { useGetTours } from "@/core/services/queries";
 import { Controller, useForm } from "react-hook-form";
 //Icons
 import { GrLocation } from "react-icons/gr";
 import { TbWorldSearch } from "react-icons/tb";
 import { LuCalendarDays } from "react-icons/lu";
-import { DateToIso, flattenObject } from "@/core/utils/helper";
-import { DatePicker } from "zaman";
+// import { DateToIso, flattenObject } from "@/core/utils/helper";
+// import { DatePicker } from "zaman";
 
 
 function SearchBox() {
-    const [query, setQuery] = useState("");
+    // const [query, setQuery] = useState("");
     // const [show, setShow] = useState(false);
-    const { data, isPending, refetch } = useGetTours(query);
+    // const { data, isPending, refetch } = useGetTours(query);
     const { register, handleSubmit, control } = useForm();
-
-    useEffect(() => {
-        refetch()
-    },[query]);
-
-    const submitHandler = (form) => {
-        setQuery(flattenObject(form))
-    }
+    //
+    // useEffect(() => {
+    //     refetch()
+    // },[query]);
+    //
+    // const submitHandler = (form) => {
+    //     setQuery(flattenObject(form))
+    // }
 
     // const showHandler = () => setShow(true);
 
@@ -31,9 +31,10 @@ function SearchBox() {
         <div className="flex items-center w-full my-2 mx-auto">
             <div className="flex w-[1270px] h-[100px] mx-auto">
                 <div className="flex items-center justify-between w-[874px] h-[71px] mx-auto px-5 border-2 rounded-[20px]">
-                    <form onSubmit={submitHandler} className="flex">
+                    <form className="flex">
+                        {/*onSubmit={submitHandler}*/}
                         <div className="flex flex-col">
-                            <button  className="flex items-center w-[225px] h-[51px] text-xl font-normal border-l">
+                            <button className="flex items-center w-[225px] h-[51px] text-xl font-normal border-l">
                                 <GrLocation className="-mt-2 ml-2 size-5"/>
                                 مبدا
                             </button>
@@ -91,26 +92,26 @@ function SearchBox() {
                                 <LuCalendarDays className="-mt-2 ml-2"/>
                                 <p>تاریخ</p>
                             </div>
-                            <div>
-                                <Controller
-                                    control={control}
-                                    name="date"
-                                    defaultValue="Date"
-                                    render={({ field: { onChange } }) => (
-                                        <DatePicker
-                                            round="x2"
-                                            accentColor="#28A745"
-                                            onChange={(e) =>
-                                                onChange({
-                                                    startDate: DateToIso(e.from),
-                                                    endDate: DateToIso(e.to),
-                                                })
-                                            }
-                                            range
-                                        />
-                                    )}
-                                />
-                            </div>
+                            {/*<div>*/}
+                            {/*    <Controller*/}
+                            {/*        control={control}*/}
+                            {/*        name="date"*/}
+                            {/*        defaultValue="Date"*/}
+                            {/*        render={({ field: { onChange } }) => (*/}
+                            {/*            <DatePicker*/}
+                            {/*                round="x2"*/}
+                            {/*                accentColor="#28A745"*/}
+                            {/*                onChange={(e) =>*/}
+                            {/*                    onChange({*/}
+                            {/*                        startDate: DateToIso(e.from),*/}
+                            {/*                        endDate: DateToIso(e.to),*/}
+                            {/*                    })*/}
+                            {/*                }*/}
+                            {/*                range*/}
+                            {/*            />*/}
+                            {/*        )}*/}
+                            {/*    />*/}
+                            {/*</div>*/}
                         </div>
                         <button type="submit" className="w-[190px] h-[51px] bg-[#28A745] hover:bg-green-700 text-[#fff] text-2xl font-normal rounded-2xl ">جستجو</button>
                     </form>
