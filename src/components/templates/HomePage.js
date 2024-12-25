@@ -11,7 +11,7 @@ function HomePage() {
         <>
             <Banner/>
             <SearchBox/>
-            <Tours/>
+            {/*<Tours/>*/}
             <Contact/>
             <Slider/>
             <BaseFooter/>

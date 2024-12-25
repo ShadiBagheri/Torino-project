@@ -1,9 +1,19 @@
+"use server";
+
 import Card from "@/components/module/Card";
 
 async function Tours() {
-    const res = await fetch("http://localhost:6500/tour", {cache: "no-store"});
-    const data = await res.json();
-    console.log(data)
+    try{
+        const res = await fetch("http://localhost:6500/tour");
+        if (!res){
+            throw new Error("Response Network is not work");
+        }
+        const data = await res.json();
+        console.log(data)
+    } catch (error) {
+        console.log("Failed to fetch tours", error);
+        return Promise.reject("Error Loading Tours!");
+    }
 
     return(
         <div className="flex items-center w-full mx-auto my-16">

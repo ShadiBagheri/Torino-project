@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import { useGetUserData } from "@/core/services/queries";
 import { useRouter } from "next/navigation";
@@ -18,7 +18,6 @@ function AuthProvider({ children }) {
                 Loading...
             </p>
         );
-
     return children;
 }
 
