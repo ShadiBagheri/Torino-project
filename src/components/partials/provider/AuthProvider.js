@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { useGetUserData } from "@/core/services/queries";
 import { useRouter } from "next/navigation";
@@ -10,7 +10,7 @@ function AuthProvider({ children }) {
 
     useEffect(() => {
         if (!isPending && !data?.data) router.push("/");
-    }, [isPending]);
+    }, [isPending, data?.data, router]);
 
     if (isPending)
         return (

@@ -1,10 +1,18 @@
+import Image from "next/image";
+
 function Card(props) {
     const {id, title, image, price ,options, fleetVehicle} = props;
     console.log({ image, id })
 
     return(
         <div className="w-[278px] h-[277px] border rounded-[10px] bg-[#fff]">
-            <img className="w-[278px] h-[159px] rounded-t-[10px]" src={image} alt="imag"/>
+            <Image
+                className="w-[278px] h-[159px] rounded-t-[10px]"
+                src={image}
+                alt="image"
+                width={280}
+                height={280}
+            />
             <div className=" overflow-x-auto mt-2">
                 <h1 className="px-2 text-[22px] font-normal">{title}</h1>
                 <div className="flex w-[255px] mt-1 px-2 text-[15px] font-normal text-gray-500 overflow-x-auto">
@@ -15,7 +23,7 @@ function Card(props) {
                         {price}
                         <p className="mr-2 text-xs text-gray-500">تومان</p>
                     </h3>
-                    <button className="w-[64px] h-[25px] text-[#fff] bg-[#28A745] rounded">رزرو</button>
+                    <button className="w-[64px] h-[25px] text-[#fff] bg-[#28A745] hover:bg-green-700 rounded">رزرو</button>
                 </div>
             </div>
         </div>
