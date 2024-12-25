@@ -1,5 +1,5 @@
 function Card(props) {
-    const {id, title, image, startDate, endDate, price ,options, availableSeats, fleetVehicle} = props;
+    const {id, title, image, price ,options, fleetVehicle} = props;
     console.log({ image, id })
 
     return(

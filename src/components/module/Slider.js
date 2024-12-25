@@ -1,21 +1,18 @@
 "use client";
 
-import { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import 'swiper/css/pagination';
 // import 'swiper/css/navigation';
 import './style.css';
-
 // import required modules
 import { EffectCards ,Pagination, Navigation, Virtual } from 'swiper/modules';
 import Image from "next/image";
 
-function Slider() {
 
+function Slider() {
     return (
         <div className="flex w-full">
             <div className="flex items-center justify-between w-[1270px] h-[570px] mt-16 mx-auto px-14">
