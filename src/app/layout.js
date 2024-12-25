@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import TanstackQueryProvider from "@/components/partials/provider/TanstackQueryProvider";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 //Components
 import Layout from "@/components/layout/Layout";
