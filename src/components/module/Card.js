@@ -1,8 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function Card(props) {
     const {id, title, image, price ,options, fleetVehicle} = props;
-    console.log({ image, id })
 
     return(
         <div className="w-[278px] h-[277px] border rounded-[10px] bg-[#fff]">
@@ -23,7 +23,9 @@ function Card(props) {
                         {price}
                         <p className="mr-2 text-xs text-gray-500">تومان</p>
                     </h3>
-                    <button className="w-[64px] h-[25px] text-[#fff] bg-[#28A745] hover:bg-green-700 rounded">رزرو</button>
+                    <button className="w-[64px] h-[25px] text-[#fff] bg-[#28A745] hover:bg-green-700 rounded">
+                        <Link href={`/tours/${id}`}> رزرو</Link>
+                    </button>
                 </div>
             </div>
         </div>

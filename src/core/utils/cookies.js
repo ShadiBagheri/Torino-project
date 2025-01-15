@@ -14,4 +14,8 @@ function getCookie(name) {
     if (parts?.length === 2) return parts?.pop()?.split(";")?.shift();
 }
 
+function deleteCookie(name, value) {
+
+}
+
 export { setCookie, getCookie };

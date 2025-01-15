@@ -16,9 +16,8 @@ const useGetTours = (query) => {
     const queryFn = () => api.get(url);
     const queryKey = ["tour", query];
 
-    return useQuery({queryFn, queryKey, enabled: false});
-}
-
+    return useQuery({ queryFn, queryKey, enabled: false });
+};
 
 export { useGetUserData, useGetTours };
 

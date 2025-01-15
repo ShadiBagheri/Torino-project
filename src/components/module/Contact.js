@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Contact() {
     return(
-        <div className="flex items-center justify-between w-full mx-aut my-20">
+        <div className="flex items-center justify-between w-full mx-aut mt-28 mb-16">
             <div className="flex items-center w-[1270px] h-[251px] mx-auto border rounded-[10px]">
                 <div className="flex items-center justify-between w-[950px] h-[251px] px-16 bg-[#28A745] border rounded-[10px]">
                     <div className="-mt-5 tracking-wider">

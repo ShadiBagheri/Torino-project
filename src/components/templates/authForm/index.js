@@ -16,7 +16,7 @@ function AuthForm({ mobile, setMobile, isLogin ,setIsLogin }) {
     }
 
     return(
-        <div>
+        <div className="z-10">
             {isModalOpen && (<SendOTP setStep={setStep} mobile={mobile} setMobile={setMobile} closeModal={closeModal} setIsLogin={setIsLogin}/>)}
             {step === 2 && (<CheckOTP setStep={setStep} mobile={mobile} setIsOpenModal={setIsOpenModal} isLogin={isLogin} setIsLogin={setIsLogin}/>)}
         </div>

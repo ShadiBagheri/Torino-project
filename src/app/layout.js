@@ -8,6 +8,8 @@ import Layout from "@/components/layout/Layout";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+
 const yekan = localFont({
     src : [
         {

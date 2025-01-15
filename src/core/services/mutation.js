@@ -25,14 +25,10 @@ const useCheckOtp = () => {
     return useMutation({ mutationFn, onSuccess });
 };
 
-// const useTours = () => {
-//     const queryClient = useQueryClient();
-//
-//     const mutationFn = (data) => api.get("tour", data);
-//     queryClient.invalidateQueries({ queryKey:["all-data"] });
-//
-//     return useMutation({ mutationFn })
-//
-// }
+const useAddToBasket = () => {
+    const mutationFn = (id) => api.get(  `basket/${id}`, id);
 
-export { useSendOtp, useCheckOtp };
+    return useMutation({ mutationFn })
+}
+
+export { useSendOtp, useCheckOtp, useAddToBasket };
