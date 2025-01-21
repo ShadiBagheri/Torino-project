@@ -18,7 +18,6 @@ async function TourDetails({ params }) {
         cache: "no-store",
     });
 
-
     return (
         <div className="container flex items-center w-full h-full mx-auto lg:h-screen px-10 lg:bg-[#F3F3F3]">
             <div className="flex flex-col mt-5 mb-16 mx-auto lg:w-[1270px] lg:h-[427px] lg:mt-0 lg:mb-0 lg:py-8 lg:px-6 lg:bg-[#fff] lg:border rounded-[10px]">
@@ -95,7 +94,7 @@ async function TourDetails({ params }) {
                     <div className="flex flex-col items-center lg:items-start lg:pl-14 lg:h-[85px]">
                         <div className="flex mt-2">
                             <RiShieldUserLine className="ml-2 size-4 lg:size-5"/>
-                            <p className="text-sm font-normal text-gray-500">بیمه</p>
+                            <p className="text-sm lg:text-lg font-normal text-gray-500">بیمه</p>
                         </div>
                         <p className="mt-2 text-xs lg:text-base font-medium">دارای بیمه میباشد.</p>
                     </div>

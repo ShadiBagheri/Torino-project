@@ -36,7 +36,6 @@ function SendOTP(props) {
                     // toast(data?.data?.code)
                     alert(data?.data?.message)
                     alert(data?.data?.code)
-
                     setStep(2);
                 },
                 onError: (error) => {

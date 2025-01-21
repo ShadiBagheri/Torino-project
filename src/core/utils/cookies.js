@@ -1,7 +1,7 @@
 function setCookie(name, value, days) {
-    var expires = "";
+    let expires = "";
     if (days) {
-        var date = new Date();
+        let date = new Date();
         date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
         expires = "; expires=" + date.toUTCString();
     }
@@ -14,8 +14,8 @@ function getCookie(name) {
     if (parts?.length === 2) return parts?.pop()?.split(";")?.shift();
 }
 
-function deleteCookie(name, value) {
-
-}
+// function deleteCookie(name, value) {
+//
+// }
 
 export { setCookie, getCookie };

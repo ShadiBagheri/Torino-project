@@ -31,4 +31,16 @@ const useAddToBasket = () => {
     return useMutation({ mutationFn })
 }
 
-export { useSendOtp, useCheckOtp, useAddToBasket };
+const useCheckout = () => {
+    const queryClient = useQueryClient();
+
+    const mutationFn = (data) => api.post("order", data);
+
+    const onSuccess = () => {
+        queryClient.invalidateQueries({ queryKey: ["user/tours"] });
+    }
+
+    return useMutation({ mutationFn, onSuccess });
+}
+
+export { useSendOtp, useCheckOtp, useAddToBasket, useCheckout };
