@@ -4,6 +4,7 @@ import api from "@/core/config/api";
 //Cookie
 import { setCookie } from "@/core/utils/cookies";
 import {data} from "autoprefixer";
+import {useQuery} from "react-query";
 
 const useSendOtp = () => {
     const mutationFn = (data) => api.post("auth/send-otp", data);
@@ -25,6 +26,18 @@ const useCheckOtp = () => {
     return useMutation({ mutationFn, onSuccess });
 };
 
+const useUserInfo = () => {
+    const queryClient = useQueryClient();
+
+    const mutationFn = (data) => api.get("user/profile", data);
+    const onSuccess = () => {
+        queryClient.invalidateQueries({ queryKey: ["user/profile"]});
+    }
+
+    return useMutation({ mutationFn, onSuccess });
+}
+
+
 const useAddToBasket = () => {
     const mutationFn = (id) => api.get(  `basket/${id}`, id);
 
@@ -43,4 +56,4 @@ const useCheckout = () => {
     return useMutation({ mutationFn, onSuccess });
 }
 
-export { useSendOtp, useCheckOtp, useAddToBasket, useCheckout };
+export { useSendOtp, useCheckOtp, useUserInfo, useAddToBasket, useCheckout };
