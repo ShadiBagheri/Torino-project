@@ -4,7 +4,7 @@ import UserBankInfo from "@/components/templates/userBankInfo";
 
 function Profile() {
     return (
-        <div className="flex flex-col w-full h-full gap-10 relative">
+        <div className="container flex flex-col w-full h-full mx-auto gap-5 lg:gap-10 bg-yellow-100">
             <UserInfo/>
             <PersonalInfo/>
             <UserBankInfo/>

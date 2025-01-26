@@ -3,8 +3,6 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import api from "@/core/config/api";
 //Cookie
 import { setCookie } from "@/core/utils/cookies";
-import {data} from "autoprefixer";
-import {useQuery} from "react-query";
 
 const useSendOtp = () => {
     const mutationFn = (data) => api.post("auth/send-otp", data);
@@ -46,9 +44,7 @@ const useAddToBasket = () => {
 
 const useCheckout = () => {
     const queryClient = useQueryClient();
-
     const mutationFn = (data) => api.post("order", data);
-
     const onSuccess = () => {
         queryClient.invalidateQueries({ queryKey: ["user/tours"] });
     }
