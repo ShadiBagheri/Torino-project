@@ -19,7 +19,7 @@ async function TourDetails({ params }) {
     });
 
     return (
-        <div className="container flex items-center w-full h-full mx-auto lg:h-screen px-10 lg:bg-[#F3F3F3]">
+        <div className="container flex items-center w-full lg:h-screen mx-auto py-10 px-10 lg:bg-[#F3F3F3]">
             <div className="flex flex-col mt-5 mb-16 mx-auto lg:w-[1270px] lg:h-[427px] lg:mt-0 lg:mb-0 lg:py-8 lg:px-6 lg:bg-[#fff] lg:border rounded-[10px]">
                 <div className="flex flex-col lg:flex-row items-center justify-between lg:w-full gap-10 mx-auto">
                     <Image className="w-full h-[220px] sm:h-[380px] md:h-[450px] lg:w-[397px] lg:h-[265px] rounded-xl" src={tourData.image} width={400} height={400} alt="img"/>

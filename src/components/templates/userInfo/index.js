@@ -4,8 +4,8 @@ import EditInfo from "@/components/templates/userInfo/EditInfo";
 function UserInfo() {
     return(
         <>
-            <Info/>
-            {/*<EditInfo/>*/}
+            {/*<Info/>*/}
+            <EditInfo/>
         </>
     )
 }

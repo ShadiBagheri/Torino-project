@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import {ToPersianNumber} from "topersiannumber";
 
 function Card(props) {
     const {id, title, image, price ,options, fleetVehicle} = props;
 
     return(
-        <div className="w-[278px] h-[277px] border rounded-[10px] bg-[#fff]">
+        <div className="w-[278px] h-[277px] my-10 border rounded-[10px] bg-[#fff]">
             <Image
                 className="w-[278px] h-[159px] rounded-t-[10px]"
                 src={image}

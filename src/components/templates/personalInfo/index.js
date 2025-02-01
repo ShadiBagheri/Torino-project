@@ -5,7 +5,7 @@ function PersonalInfo() {
     return(
         <>
             <PersonalForm/>
-            {/*<EditPersonalForm/>*/}
+            <EditPersonalForm/>
         </>
     )
 }

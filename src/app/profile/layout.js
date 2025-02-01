@@ -11,42 +11,37 @@ export default function ProfileLayout({ children }) {
     const pathName = usePathname();
 
     return (
-        <div className="flex items-center w-full my-10 px-10 bg-fuchsia-300">
-            <div className="flex flex-col w-full lg:w-[1270px] mx-auto bg-fuchsia-300">
-                <div className="flex items-center w-full mb-5 h-[50px] lg:w-[284px] lg:[170px]  bg-yellow-100">
-                    <ul className="flex items-center justify-between w-full mx-auto px-2 border-b-2 border-[#282828] gap-10">
-                        <li className={`${pathName !== "/profile" ? "active" : "text-[#28A745] border-b-2 border-[#28A745] lg:border-none lg:bg-green-100"} pb-[17px] text-xs font-normal lg:text-sm lg:rounded-t-[10px] text-[#282828]`}>
-                            <Link className="flex text-center lg:mt-0.5"  href="/profile">
-                                <FaUserLarge className="ml-2 size-3 lg:size-4"/>
-                                پروفایل
-                            </Link>
-                        </li>
-                        <li className={`${pathName !== "/profile/my-tours" ? "active" : "text-[#28A745] border-b-2 border-[#28A745] lg:border-none lg:bg-green-100"} pb-[17px] text-xs font-normal lg:text-sm text-[#282828]`}>
-                            <Link className="flex text-center lg:mt-0.5" href="/profile/my-tours">
-                                <RiSunFoggyFill className="ml-2 size-4 lg:size-5"/>
-                                تورهای من
-                            </Link>
-                        </li>
-                        <li className={`${pathName !== "/profile/transactions" ? "active" : "text-[#28A745] border-b-2 border-[#28A745] lg:border-none lg:bg-green-100"} pb-[17px] text-xs font-normal lg:text-sm lg:rounded-b-[10px] text-[#282828]`}>
-                            <Link className="flex text-center lg:mt-0.5" href="/profile/transactions">
-                                <GiBuyCard className="ml-2 size-3 lg:size-4"/>
-                                تراکنش ها
-                            </Link>
-                        </li>
-                    </ul>
+        <div className="container flex items-center w-full mt-3 mb-10 lg:my-10 mx-auto px-10 md:px-0 bg-red-100">
+            <div className="container flex items-center justify-between lg:w-[1270px] mx-auto bg-blue-100">
+                <div className="flex flex-col lg:flex-row w-full gap-10 bg-green-500">
+                    <nav className="container w-full h-[34px] sm:h-[42px] md:h-[46px] border-b-2 lg:border-0 lg:w-[234px] lg:h-[160px] xl:w-[284px] xl:h-[170px] lg:bg-[#fff] lg:rounded-[10px]">
+                        <ul className="flex lg:flex-col items-center justify-between lg:border-2 lg:rounded-[10px] xl:w-full lg:h-full lg:divide-y">
+                            <li className={`${pathName !== "/profile" ? "active" : "lg:rounded-t-[10px] lg:bg-green-100"} lg:w-full lg:h-full`}>
+                                <Link className={`${pathName !== "/profile" ? "active" : "text-[#28A745] border-b-2 lg:border-0 border-[#28A745] transform transition duration-300"} flex py-2 px-4 text-xs font-normal sm:text-base md:text-lg lg:text-sm lg:pt-5`}
+                                      href="/profile">
+                                    <FaUserLarge className="sm:mt-1 ml-2 size-3 lg:size-3 lg:mt-0.5"/>
+                                    پروفایل
+                                </Link>
+                            </li>
+                            <li className={`${pathName !== "/profile/my-tours" ? "active" : "lg:bg-green-100"} lg:w-full lg:border-b-2 lg:h-full`}>
+                                <Link className={`${pathName !== "/profile/my-tours" ? "active" : "text-[#28A745] border-b-2 lg:border-0 border-[#28A745] transform transition duration-300"} flex py-2 px-4 text-xs font-normal sm:text-base md:text-lg lg:text-sm lg:pt-5`}
+                                      href="/profile/my-tours">
+                                    <RiSunFoggyFill className="ml-2 size-4 lg:size-4"/>
+                                    تورهای من
+                                </Link>
+                            </li>
+                            <li className={`${pathName !== "/profile/transactions" ? "active" : "lg:rounded-b-[10px] lg:bg-green-100"} lg:w-full lg:h-full`}>
+                                <Link className={`${pathName !== "/profile/transactions" ? "active" : "text-[#28A745] border-b-2 lg:border-0 border-[#28A745] transform transition duration-300"} flex py-2 px-4 text-xs font-normal sm:text-base md:text-lg lg:text-sm lg:pt-5`}
+                                      href="/profile/transactions">
+                                    <GiBuyCard className="sm:mt-1 ml-2 size-3 lg:size-3 lg:mt-0.5"/>
+                                    تراکنش ها
+                                </Link>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div>{children}</div>
                 </div>
-                <div>{children}</div>
             </div>
         </div>
-        // <div className="flex items-center w-full h-full my-10 bg-fuchsia-300">
-        //     <div className="container flex lg:w-[1270px] mx-auto border-gray-700 bg-green-300">
-        //         <div className="flex flex-col w-full lg:px-0 lg:flex-row mx-auto gap-10 bg-amber-700">
-        //             <ul className="flex items-center justify-between h-[50px] mx-auto lg:mx-0 lg:px-0 -pb-10 border-b-2 lg:bg-[#fff] lg:flex-col lg:w-[284px] lg:h-[170px] lg:border-2 lg:divide-y lg:rounded-[10px]">
-
-        //             </ul>
-        //             <div>{children}</div>
-        //         </div>
-        //     </div>
-        // </div>
     );
 }

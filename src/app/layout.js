@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
+
 const yekan = localFont({
     src : [
         {
@@ -38,7 +39,9 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
+
+
+    return (
     <html lang="fa" dir="rtl">
       <body className={yekan.className} suppressHydrationWarning={true}>
       <TanstackQueryProvider>
