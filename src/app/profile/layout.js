@@ -11,9 +11,9 @@ export default function ProfileLayout({ children }) {
     const pathName = usePathname();
 
     return (
-        <div className="container flex items-center w-full mt-3 mb-10 lg:my-10 mx-auto px-10 md:px-0 bg-red-100">
-            <div className="container flex items-center justify-between lg:w-[1270px] mx-auto bg-blue-100">
-                <div className="flex flex-col lg:flex-row w-full gap-10 bg-green-500">
+        <div className="container flex items-center w-full mt-3 mb-10 lg:my-10 mx-auto px-10 md:px-0 bg-[#fff]">
+            <div className="container flex items-center justify-between lg:w-[1270px] mx-auto">
+                <div className="flex flex-col lg:flex-row w-full gap-10">
                     <nav className="container w-full h-[34px] sm:h-[42px] md:h-[46px] border-b-2 lg:border-0 lg:w-[234px] lg:h-[160px] xl:w-[284px] xl:h-[170px] lg:bg-[#fff] lg:rounded-[10px]">
                         <ul className="flex lg:flex-col items-center justify-between lg:border-2 lg:rounded-[10px] xl:w-full lg:h-full lg:divide-y">
                             <li className={`${pathName !== "/profile" ? "active" : "lg:rounded-t-[10px] lg:bg-green-100"} lg:w-full lg:h-full`}>

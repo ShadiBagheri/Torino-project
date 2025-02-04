@@ -4,8 +4,8 @@ import EditPersonalForm from "@/components/templates/personalInfo/EditPersonalFo
 function PersonalInfo() {
     return(
         <>
-            {/*<PersonalForm/>*/}
-            <EditPersonalForm/>
+            <PersonalForm/>
+            {/*<EditPersonalForm/>*/}
         </>
     )
 }

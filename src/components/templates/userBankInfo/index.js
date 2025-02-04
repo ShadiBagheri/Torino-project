@@ -4,8 +4,8 @@ import EditBankForm from "@/components/templates/userBankInfo/EditBankForm";
 function UserBankInfo() {
     return(
         <>
-            {/*<BankForm/>*/}
-            <EditBankForm/>
+            <BankForm/>
+            {/*<EditBankForm/>*/}
         </>
     )
 }

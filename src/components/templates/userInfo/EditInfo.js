@@ -15,11 +15,11 @@ function EditInfo() {
                                placeholder=" "
                         />
                         <label htmlFor="email"
-                               className="mr-2 px-1 absolute text-sm font-normal text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 bg-[#fff] peer-focus:text-gray-60 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 ltr:peer-focus:right-auto ltr:peer-focus:translate-x-1/2">
+                               className="mr-2 mt-1 px-1 absolute text-sm font-normal text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 bg-[#fff] peer-focus:text-gray-60 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-1 peer-focus:scale-75 peer-focus:-translate-y-4 ltr:peer-focus:right-auto ltr:peer-focus:translate-x-1/2">
                             آدرس ایمیل
                         </label>
                     </div>
-                    <button className="flex items-center md:w-[120px] md:h-[45px] lg:w-[130px] lg:h-[46px] pt-1 md:pr-9 lg:pr-12 bg-[#28A745] hover:bg-green-700 text-base font-semibold text-[#fff] rounded-[5px] duration-300">
+                    <button className="flex items-center md:w-[120px] md:h-[45px] lg:w-[130px] lg:h-[46px] pt-1 md:pr-11 lg:pr-12 bg-[#28A745] hover:bg-green-700 text-base font-semibold text-[#fff] rounded-[5px] duration-300">
                         تایید
                     </button>
                 </form>
@@ -28,7 +28,7 @@ function EditInfo() {
                     <div className="flex w-full">
                         <input className="w-full h-[40px] px-3 text-sm font-normal text-gray-600 border-2 border-gray-500 rounded-[5px] outline-none" type="email" placeholder="آدرس ایمیل" name="email"/>
                     </div>
-                    <button className="flex items-center w-[93px] h-[37px] pr-5 bg-[#28A745] hover:bg-green-700 text-base font-semibold text-[#fff] rounded-[5px]">
+                    <button className="flex items-center w-[93px] h-[37px] pr-6 bg-[#28A745] hover:bg-green-700 text-base font-semibold text-[#fff] rounded-[5px]">
                         تایید
                     </button>
                 </form>
