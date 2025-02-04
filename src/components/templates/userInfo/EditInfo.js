@@ -9,9 +9,6 @@ function EditInfo() {
                 </div>
                 {/* md - lg size */}
                 <form className="hidden md:flex items-center justify-between lg:mr-5 mt-6 md:mt-0">
-                    {/*<div className="flex w-full -ml-2">*/}
-                    {/*    <input className="md:w-[240px] md:h-[43px] lg:w-[255px] lg:h-[45px] px-3 text-sm font-normal text-gray-500 border-2 border-gray-400 rounded-[5px] outline-none" type="email" placeholder="آدرس ایمیل" name="email"/>*/}
-                    {/*</div>*/}
                     <div className="md:w-[240px] md:h-[43px] lg:w-[280px] lg:h-[45px] px-3 ml-4 relative">
                         <input type="email" id="email"
                                className="-mr-2 absolute flex px-3 pb-2 pt-4 w-full text-sm font-normal text-gray-600 bg-[#fff] rounded-[5px] border-2 border-gray-400 appearance-none focus:outline-none focus:border-gray-400 peer"
