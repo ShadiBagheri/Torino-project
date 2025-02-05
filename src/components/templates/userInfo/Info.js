@@ -1,8 +1,12 @@
+// import { useState } from "react";
+
 //Icons
 import { BiEditAlt } from "react-icons/bi";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 
-function Info() {
+
+function Info({  isInfoOpen, setIsInfoOpen, infoOpenHandler }) {
+
     return(
         <div className="container flex flex-col h-[169px] mx-auto py-6 px-5 md:px-10 lg:py-2 lg:px-3 lg:w-[750px] lg:h-[130px] xl:w-[950px] xl:h-[130px] border-2 rounded-[10px] bg-[#fff]">
             <h1 className="lg:mt-2 text-base font-normal md:text-lg lg:text-base text-[#282828] tracking-wide">اطلاعات حساب کاربری</h1>
@@ -16,7 +20,7 @@ function Info() {
                     <h3 className="mt-0.5 text-sm font-light">ایمیل</h3>
                     <TfiLayoutLineSolid className="mt-1"/>
                 </div>
-                <button className="hidden lg:flex gap-2 text-sm font-normal text-[#009ECA] hover:text-blue-300">
+                <button onClick={(infoOpenHandler) => setIsInfoOpen(!isInfoOpen)} className="hidden lg:flex gap-2 text-sm font-normal text-[#009ECA] hover:text-blue-300">
                     <BiEditAlt className="size-4"/>
                     افزودن
                 </button>
@@ -30,7 +34,7 @@ function Info() {
                         <h3 className="mt-0.5 text-sm font-light md:text-base">ایمیل</h3>
                         <TfiLayoutLineSolid className="mt-1 mr-10 md:mt-2 md:mr-20"/>
                     </div>
-                    <button className="flex text-[13px] font-normal md:text-base text-[#009ECA] hover:text-blue-300">
+                    <button onClick={(infoOpenHandler) => setIsInfoOpen(!isInfoOpen)} className="flex text-[13px] font-normal md:text-base text-[#009ECA] hover:text-blue-300">
                         <BiEditAlt className="ml-1 size-4 md:size-5"/>
                         افزودن
                     </button>

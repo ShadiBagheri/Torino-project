@@ -24,24 +24,6 @@ const useCheckOtp = () => {
     return useMutation({ mutationFn, onSuccess });
 };
 
-const useUserInfo = () => {
-    const queryClient = useQueryClient();
-
-    const mutationFn = (data) => api.get("user/profile", data);
-    const onSuccess = () => {
-        queryClient.invalidateQueries({ queryKey: ["user/profile"]});
-    }
-
-    return useMutation({ mutationFn, onSuccess });
-}
-
-
-const useAddToBasket = () => {
-    const mutationFn = (id) => api.get(  `basket/${id}`, id);
-
-    return useMutation({ mutationFn })
-}
-
 const useCheckout = () => {
     const queryClient = useQueryClient();
     const mutationFn = (data) => api.post("order", data);
@@ -52,4 +34,4 @@ const useCheckout = () => {
     return useMutation({ mutationFn, onSuccess });
 }
 
-export { useSendOtp, useCheckOtp, useUserInfo, useAddToBasket, useCheckout };
+export { useSendOtp, useCheckOtp, useCheckout };
