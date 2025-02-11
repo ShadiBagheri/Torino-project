@@ -21,6 +21,15 @@ const useCheckOtp = () => {
     return useMutation({ mutationFn, onSuccess });
 };
 
+const useEditUserProfile = () => {
+    const queryClient = useQueryClient();
+    const mutationFn = (data) => api.put("user/profile", data);
+    const onSuccess = (data) => {
+      queryClient.invalidateQueries({ queryKey: ["user_data"] });
+    }
+    return useMutation({ mutationFn, onSuccess });
+}
+
 const useCheckout = () => {
     const queryClient = useQueryClient();
     const mutationFn = (data) => api.post("order", data);
@@ -31,4 +40,4 @@ const useCheckout = () => {
     return useMutation({ mutationFn, onSuccess });
 }
 
-export { useSendOtp, useCheckOtp, useCheckout };
+export { useSendOtp, useCheckOtp, useEditUserProfile, useCheckout };
