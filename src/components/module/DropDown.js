@@ -1,14 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-//Queries
-import { useGetUserData } from "@/core/services/queries";
 
 
-function DropDown( {mobile} ) {
+function DropDown({ mobile }) {
 
-    const { data } = useGetUserData();
-
-    if (data?.data) return(
+return(
         <div className="flex w-[246px] h-[152px] mt-52 -ms-7 bg-[#fff] rounded-[11px] z-10 absolute">
             <div className="flex flex-col items-start justify-between">
                 <div className="flex w-[246px] h-[44px] py-2 px-3 bg-gray-100 rounded-t-[11px]">

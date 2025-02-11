@@ -1,3 +1,4 @@
+//Templates
 import UserInfo from "@/components/templates/userInfo";
 import PersonalInfo from "@/components/templates/personalInfo";
 import UserBankInfo from "@/components/templates/userBankInfo";

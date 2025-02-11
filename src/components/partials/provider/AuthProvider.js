@@ -1,8 +1,9 @@
 "use client";
-
-import { useGetUserData } from "@/core/services/queries";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+//Queries
+import { useGetUserData } from "@/core/services/queries";
+
 
 function AuthProvider({ children }) {
     const router = useRouter();
@@ -10,7 +11,7 @@ function AuthProvider({ children }) {
 
     useEffect(() => {
         if (!isPending && !data?.data) router.push("/");
-    }, [isPending, data?.data, router]);
+    }, [isPending]);
 
     if (isPending)
         return (

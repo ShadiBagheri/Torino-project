@@ -7,16 +7,12 @@ import { useSendOtp } from "@/core/services/mutation";
 import { isValidateMobile } from "@/core/utils/validation";
 //Icons
 import { IoClose } from "react-icons/io5";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 
 function SendOTP(props) {
-    const { signup, setSignup, setStep, mobile, setMobile, closeModal } = props;
+    const { setStep, mobile, setMobile, closeModal } = props;
     const [error, setError] = useState("");
-
-    const modalHandler = () => {
-        setSignup(signup)
-    }
 
     const { mutate, isPending } = useSendOtp();
 
@@ -32,10 +28,8 @@ function SendOTP(props) {
             {
                 onSuccess: (data) => {
                     console.log(data?.data?.code);
-                    // toast.success(data?.data?.message)
-                    // toast(data?.data?.code)
-                    alert(data?.data?.message)
-                    alert(data?.data?.code)
+                    toast.success(data?.data?.message);
+                    toast(data?.data?.code);
                     setStep(2);
                 },
                 onError: (error) => {

@@ -1,3 +1,5 @@
+
+
 import { useQuery } from "@tanstack/react-query";
 import api from "../config/api";
 
@@ -12,7 +14,6 @@ const useGetUserData = () => {
 
 const useGetTours = (query) => {
     const url = "tour?" + QueryString.stringify(query);
-
     const queryFn = () => api.get(url);
     const queryKey = ["tour", query];
 

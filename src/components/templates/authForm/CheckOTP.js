@@ -8,21 +8,18 @@ import OtpInput from 'react18-input-otp';
 import { IoIosArrowRoundBack } from "react-icons/io";
 
 
-function CheckOTP({ mobile, setStep, setIsOpenModal, isLogin, setIsLogin }) {
+function CheckOTP({ mobile, setStep, setIsOpenModal }) {
     const [code, setCode] = useState("");
-
     const { mutate, isPending } = useCheckOtp();
 
     const submitHandler = (event) => {
         event.preventDefault();
-
         if (isPending) return;
 
         mutate({ mobile ,code }, {
             onSuccess: (data) => {
-                console.log({code, mobile})
+                console.log(data)
                 setIsOpenModal(false)
-                setIsLogin(true)
                 setStep(1)
             },
             onError: (error) => {
