@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useEditUserProfile } from "@/core/services/mutation";
+import { useEditUserInfoProfile } from "@/core/services/mutation";
 
 import { toast } from "react-toastify";
 
@@ -15,12 +15,13 @@ function EditInfo() {
         setError(error => ({...error, [name]: ""}));
     }
 
-    const { mutate } = useEditUserProfile();
+    const { mutate } = useEditUserInfoProfile();
     const { email } = infoForm;
 
     const validate = () => {
         let error = {};
-        if (!email.length) return toast.error("لطفا ایمیل را به درستی وارد کنید!");
+        if (!email.length) return error.email = "لطفا ایمیل را به درستی وارد کنید!";
+        console.log(error)
         return error;
     }
 

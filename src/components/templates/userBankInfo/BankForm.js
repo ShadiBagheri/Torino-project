@@ -1,13 +1,15 @@
+
 //Icons
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import { BiEditAlt } from "react-icons/bi";
 
 function BankForm({ isBankInfoOpen, setIsBankInfoOpen, bankOpenHandler }) {
+
     return(
         <div className="flex flex-col w-full h-[205px] md:h-[220px] lg:w-[750px] lg:h-[180px] xl:w-[950px] xl:h-[185px] lg:py-2 lg:px-3 py-4 px-5 md:px-10 border-2 rounded-[10px] bg-[#fff]">
             <div className="flex items-center justify-between mt-2">
                 <h1 className="text-base font-normal md:text-lg text-[#282828] tracking-wide">اطلاعات حساب بانکی</h1>
-                <button onClick={(bankOpenHandler) => setIsBankInfoOpen(!isBankInfoOpen)} className="flex text-[13px] md:text-base lg:text-sm font-normal text-[#009ECA] hover:text-blue-300">
+                <button onClick={bankOpenHandler} className="flex text-[13px] md:text-base lg:text-sm font-normal text-[#009ECA] hover:text-blue-300">
                     <BiEditAlt className="ml-2 size-4 md:size-5 lg:size-4"/>
                     ویرایش اطلاعات
                 </button>

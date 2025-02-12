@@ -21,14 +21,24 @@ const useCheckOtp = () => {
     return useMutation({ mutationFn, onSuccess });
 };
 
-const useEditUserProfile = () => {
+const useEditUserInfoProfile = () => {
     const queryClient = useQueryClient();
     const mutationFn = (data) => api.put("user/profile", data);
-    const onSuccess = (data) => {
+    const onSuccess = () => {
       queryClient.invalidateQueries({ queryKey: ["user_data"] });
     }
     return useMutation({ mutationFn, onSuccess });
 }
+
+const useEditUserBankAccount = () => {
+    const queryClient = useQueryClient();
+    const mutationFn = (data) => api.put("user/profile", data);
+    const onSuccess = () => {
+        queryClient.invalidateQueries({ queryKey: ["user_data"] });
+    }
+    return useMutation({ mutationFn, onSuccess });
+}
+
 
 const useCheckout = () => {
     const queryClient = useQueryClient();
@@ -40,4 +50,9 @@ const useCheckout = () => {
     return useMutation({ mutationFn, onSuccess });
 }
 
-export { useSendOtp, useCheckOtp, useEditUserProfile, useCheckout };
+export {
+    useSendOtp,
+    useCheckOtp,
+    useEditUserInfoProfile,
+    useEditUserBankAccount,
+    useCheckout };

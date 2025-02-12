@@ -1,13 +1,7 @@
 import { useState } from "react";
-//Yup
-// import { object, string } from 'yup';
+import { useEditUserBankAccount } from "@/core/services/mutation";
+import { toast } from "react-toastify";
 
-//
-// const bankSchema = object({
-//     shaba_code: string().length(26).required("شماره شبا صحیح نمی باشد!"),
-//     debitCard_code: string().length(16).required("شماره کارت صحیح نمی باشد!"),
-//     accountIdentifier: string().min(8).max(18).required("شماره حساب صحیح نمی باشد!"),
-// })
 
 function EditBankForm() {
     const [bankForm, setBankForm] = useState({
@@ -16,22 +10,19 @@ function EditBankForm() {
         accountIdentifier: "",
     });
     const [error, setError] = useState({
-        // shaba_code: "",
-        // debitCard_code: "",
-        // accountIdentifier: "",
-    })
+        shaba_code: "",
+        debitCard_code: "",
+        accountIdentifier: "",
+    });
 
     const changeHandler = (event) => {
         const { name, value } = event.target;
         setBankForm(bankForm => ({...bankForm, [name]: value}));
-        setError(error => ({...error, [name]: value}));
+        setError(error => ({...error, [name]: ""}));
     }
 
+    const { mutate, isPending } = useEditUserBankAccount();
     const { shaba_code, debitCard_code, accountIdentifier } = bankForm;
-
-    // if (!shaba_code && shaba_code !== String() || shaba_code.length < 26) return error.shaba_code = "شماره شبا را وارد کنید!";
-    // if (!debitCard_code && debitCard_code !== String() || debitCard_code.length < 26) return error.debitCard_code = "شماره کارت صحیح نمی باشد!";
-    // if (!accountIdentifier && accountIdentifier !== String() || accountIdentifier.length < 26) return error.accountIdentifier = "شماره حساب صحیح نمی باشد!";
 
     const bankFormValidation = () => {
         let error = {};
@@ -40,6 +31,7 @@ function EditBankForm() {
         }else if (shaba_code.length < 26) {
             error.shaba_code = "شماره شبا کمتر از 26 کاراکتر می باشد!";
         }
+
         if (shaba_code !== String()){
             error.debitCard_code = "شماره کارت صحیح نمی باشد!";
         }else if (debitCard_code.length < 16) {
@@ -56,18 +48,30 @@ function EditBankForm() {
 
     const bankFormHandler = (event) => {
         event.preventDefault();
-
         const newErrors = bankFormValidation(bankForm);
         if (Object.keys(newErrors).length > 0) {
             setError(newErrors);
-            console.log(newErrors)
+            return;
         }
-        console.log(bankForm)
+
+        if (isPending) return;
+        mutate(
+            { payment: bankForm },
+            {
+                onSuccess: (data) => {
+                    console.log(data?.data)
+                    toast.success(data?.data?.message);
+                },
+                onError: (error) => {
+                    console.log(error)
+                },
+            }
+        );
     }
 
     return(
         <div className="container flex flex-col h-[360px] mx-auto py-6 px-5 md:h-[300px] md:px-10 lg:py-4 lg:px-0 lg:w-[750px] lg:h-[215px] xl:w-[950px] border-2 rounded-[10px] bg-[#fff]">
-            <h1 className="lg:px-3 text-base font-normal md:text-lg text-[#282828] tracking-wide">ویرایش اطلاعات شخصی</h1>
+            <h1 className="lg:px-3 text-base font-normal md:text-lg text-[#282828] tracking-wide">ویرایش اطلاعات حساب بانکی</h1>
             <form onSubmit={bankFormHandler} className="flex flex-col w-full my-5">
                 <div className="flex flex-col md:grid md:grid-cols-2 md:items-center md:justify-between lg:grid-cols-3 lg:pr-3 lg:pl-4 gap-y-2 md:gap-x-10 md:gap-y-1 lg:gap-x-5">
                     <div className="flex flex-col lg:items-start h-[70px]">
@@ -83,7 +87,7 @@ function EditBankForm() {
                                 شماره شبا
                             </label>
                         </div>
-                        {error.shaba_code && (<p className="mt-3 text-red-700 font-medium text-xs z-10">{error.shaba_code}</p>)}
+                        {!!error?.shaba_code && (<p className="mt-3 text-red-700 font-medium text-xs z-10">{error?.shaba_code}</p>)}
                     </div>
                     <div className="flex flex-col h-[70px]">
                         <div className="w-full h-[40px] md:w-[298px] md:h-[43px] lg:w-[220px] lg:h-[45px] xl:w-[280px] xl:h-[45px] px-2 relative">
@@ -98,7 +102,7 @@ function EditBankForm() {
                                 شماره کارت
                             </label>
                         </div>
-                        {error.debitCard_code && (<p className="mt-3 text-red-700 font-medium text-xs z-10">{error.debitCard_code}</p>)}
+                        {!!error?.debitCard_code && (<p className="mt-3 text-red-700 font-medium text-xs z-10">{error?.debitCard_code}</p>)}
                     </div>
                     <div className="flex flex-col h-[70px]">
                         <div className="w-full h-[40px] md:w-[298px] md:h-[43px] lg:w-[220px] lg:h-[45px] xl:w-[280px] xl:h-[45px] px-2 relative">
@@ -113,7 +117,7 @@ function EditBankForm() {
                                 شماره حساب
                             </label>
                         </div>
-                        {error.debitCard_code && (<p className="mt-3 text-red-700 font-medium text-xs z-10">{error.debitCard_code}</p>)}
+                        {!!error?.accountIdentifier && (<p className="mt-3 text-red-700 font-medium text-xs z-10">{error?.accountIdentifier}</p>)}
                     </div>
                 </div>
                 <div className="container flex items-center w-full md:border-t-2 md:mt-3 lg:my-2 lg:px-6">
