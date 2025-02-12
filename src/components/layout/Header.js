@@ -12,7 +12,7 @@ function Header() {
     const pathName = usePathname();
 
     return(
-        <header className="container flex items-center w-full mx-auto h-[64px] md:h-[70px] lg:h-[74px] py-3 px-10 lg:px-0 bg-[#fff] shadow-md dark:bg-slate-800 dark:shadow-white ">
+        <header className="flex items-center w-full mx-auto h-[64px] md:h-[70px] lg:h-[74px] py-3 px-10 lg:px-0 bg-[#fff] shadow-md dark:bg-slate-800 dark:shadow-white">
             <Sidebar/>
             {/*lg size*/}
             <div className="container hidden lg:flex items-center justify-between w-[1270px] mt-1 mx-auto">
