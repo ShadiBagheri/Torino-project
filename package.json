@@ -28,6 +28,7 @@
     "react18-input-otp": "^1.1.4",
     "swiper": "^11.1.15",
     "topersiannumber": "^1.0.4",
+    "yup": "^1.6.1",
     "zaman": "^2.1.1"
   },
   "devDependencies": {
