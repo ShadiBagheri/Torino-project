@@ -1,9 +1,10 @@
 import { useState } from "react";
+//Services
 import { useEditUserBankAccount } from "@/core/services/mutation";
+//Toastify
 import { toast } from "react-toastify";
 
-
-function EditBankForm() {
+function EditBankForm( { isBankInfoOpen, setIsBankInfoOpen }) {
     const [bankForm, setBankForm] = useState({
         shaba_code: "",
         debitCard_code: "",
@@ -26,24 +27,16 @@ function EditBankForm() {
 
     const bankFormValidation = () => {
         let error = {};
-        if (shaba_code !== String()){
-            error.shaba_code = "شماره شبا را وارد کنید!";
-        }else if (shaba_code.length < 26) {
+       if (shaba_code.length < 26) {
             error.shaba_code = "شماره شبا کمتر از 26 کاراکتر می باشد!";
         }
-
-        if (shaba_code !== String()){
-            error.debitCard_code = "شماره کارت صحیح نمی باشد!";
-        }else if (debitCard_code.length < 16) {
+       if (debitCard_code.length < 16) {
             error.debitCard_code = "شماره کارت کمتر از 16 کاراکتر می باشد!";
-        }
-
-       if (accountIdentifier !== String()){
-           error.accountIdentifier = "شماره حساب صحیح نمی باشد!";
-       }else if (accountIdentifier.length < 18) {
-            error.accountIdentifier = "شماره حساب کمتر از 18 کاراکتر می باشد!";
-        }
-        return error;
+       }
+       if (accountIdentifier.length < 18) {
+           error.accountIdentifier = "شماره حساب کمتر از 18 کاراکتر می باشد!";
+       }
+       return error;
     }
 
     const bankFormHandler = (event) => {
@@ -61,6 +54,7 @@ function EditBankForm() {
                 onSuccess: (data) => {
                     console.log(data?.data)
                     toast.success(data?.data?.message);
+                    setIsBankInfoOpen(!isBankInfoOpen);
                 },
                 onError: (error) => {
                     console.log(error)
@@ -68,6 +62,8 @@ function EditBankForm() {
             }
         );
     }
+
+    const cancelBankFormHandler = () => setIsBankInfoOpen(!isBankInfoOpen);
 
     return(
         <div className="container flex flex-col h-[360px] mx-auto py-6 px-5 md:h-[300px] md:px-10 lg:py-4 lg:px-0 lg:w-[750px] lg:h-[215px] xl:w-[950px] border-2 rounded-[10px] bg-[#fff]">
@@ -125,7 +121,7 @@ function EditBankForm() {
                         <button type="submit" className="flex items-center w-full h-[37px] md:w-[120px] md:h-[45px] lg:w-[144px] lg:h-[46px] pr-12 sm:pr-20 md:pr-11 lg:pr-14 pt-1 duration-300 bg-[#28A745] hover:bg-green-700 text-base font-semibold text-[#fff] rounded-[5px]">
                             تایید
                         </button>
-                        <button className="flex items-center w-full h-[37px] md:w-[120px] md:h-[45px] lg:w-[144px] lg:h-[46px] pr-9 sm:pr-[70px] md:pr-10 lg:pr-12 pt-1 duration-300 border-2 border-[#28A745] hover:bg-[#28A745] hover:text-[#fff] text-base font-semibold text-[#28A745] rounded-[5px]">
+                        <button type="button" onClick={cancelBankFormHandler} className="flex items-center w-full h-[37px] md:w-[120px] md:h-[45px] lg:w-[144px] lg:h-[46px] pr-9 sm:pr-[70px] md:pr-10 lg:pr-12 pt-1 duration-300 border-2 border-[#28A745] hover:bg-[#28A745] hover:text-[#fff] text-base font-semibold text-[#28A745] rounded-[5px]">
                             انصراف
                         </button>
                     </div>

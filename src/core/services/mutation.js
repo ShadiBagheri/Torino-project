@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-
+//Config
 import api from "@/core/config/api";
 //Cookie
 import { setCookie } from "@/core/utils/cookies";
@@ -30,7 +30,7 @@ const useEditUserInfoProfile = () => {
     return useMutation({ mutationFn, onSuccess });
 }
 
-const useEditUserBankAccount = () => {
+const useEditPersonalInfo = () => {
     const queryClient = useQueryClient();
     const mutationFn = (data) => api.put("user/profile", data);
     const onSuccess = () => {
@@ -39,6 +39,14 @@ const useEditUserBankAccount = () => {
     return useMutation({ mutationFn, onSuccess });
 }
 
+const useEditUserBankAccount = () => {
+    const queryClient = useQueryClient();
+    const mutationFn = (data) => api.put("user/profile", data);
+    const onSuccess = () => {
+        queryClient.invalidateQueries({ queryKey: ["user_data"] });
+    }
+    return useMutation({ mutationFn, onSuccess });
+}
 
 const useCheckout = () => {
     const queryClient = useQueryClient();
@@ -54,5 +62,6 @@ export {
     useSendOtp,
     useCheckOtp,
     useEditUserInfoProfile,
+    useEditPersonalInfo,
     useEditUserBankAccount,
     useCheckout };
