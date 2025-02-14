@@ -1,10 +1,11 @@
-
+//Queries
+import { useGetUserData } from "@/core/services/queries";
 //Icons
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import { BiEditAlt } from "react-icons/bi";
-import {useGetUserData} from "@/core/services/queries";
+import EditBankForm from "@/components/templates/userBankInfo/EditBankForm";
 
-function BankForm({ isBankInfoOpen, setIsBankInfoOpen, bankOpenHandler }) {
+function BankForm({ isBankInfoOpen, setIsBankInfoOpen, bankOpenHandler, bankForm, setBankForm }) {
 
     const { data } = useGetUserData();
 
@@ -33,6 +34,13 @@ function BankForm({ isBankInfoOpen, setIsBankInfoOpen, bankOpenHandler }) {
                 </div>
             </div>
         </div>
+    )
+    return(
+        <EditBankForm isBankInfoOpen={isBankInfoOpen}
+                      setIsBankInfoOpen={setIsBankInfoOpen}
+                      bankForm={bankForm}
+                      setBankForm={setBankForm}
+        />
     )
 }
 

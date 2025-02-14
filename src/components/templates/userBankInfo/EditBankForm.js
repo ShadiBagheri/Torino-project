@@ -5,7 +5,7 @@ import { useEditUserBankAccount } from "@/core/services/mutation";
 import { toast } from "react-toastify";
 
 
-function EditBankForm( { isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm }) {
+function EditBankForm({ isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm }) {
 
     const [error, setError] = useState({
         shaba_code: "",
