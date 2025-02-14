@@ -1,15 +1,12 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 //Services
 import { useEditUserBankAccount } from "@/core/services/mutation";
 //Toastify
 import { toast } from "react-toastify";
 
-function EditBankForm( { isBankInfoOpen, setIsBankInfoOpen }) {
-    const [bankForm, setBankForm] = useState({
-        shaba_code: "",
-        debitCard_code: "",
-        accountIdentifier: "",
-    });
+
+function EditBankForm( { isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm }) {
+
     const [error, setError] = useState({
         shaba_code: "",
         debitCard_code: "",
@@ -24,6 +21,17 @@ function EditBankForm( { isBankInfoOpen, setIsBankInfoOpen }) {
 
     const { mutate, isPending } = useEditUserBankAccount();
     const { shaba_code, debitCard_code, accountIdentifier } = bankForm;
+
+    useEffect(() => {
+        if (bankForm){
+            setBankForm({
+                shaba_code: bankForm?.shaba_code,
+                debitCard_code: bankForm?.debitCard_code,
+                accountIdentifier: bankForm?.accountIdentifier,
+            })
+        }
+        console.log("this is data", bankForm)
+    }, []);
 
     const bankFormValidation = () => {
         let error = {};

@@ -1,8 +1,8 @@
 "use client";
-
+import { useState } from "react";
+//Templates
 import PersonalForm from "@/components/templates/personalInfo/PersonalForm";
 import EditPersonalForm from "@/components/templates/personalInfo/EditPersonalForm";
-import {useState} from "react";
 
 
 function PersonalInfo() {

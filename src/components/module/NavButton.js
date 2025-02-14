@@ -2,16 +2,17 @@
 
 import { useState} from "react";
 import Image from "next/image";
+//Queries
+import { useGetUserData } from "@/core/services/queries";
 //Module
 import DropDown from "@/components/module/DropDown";
 //Icons
 import { SlArrowDown } from "react-icons/sl";
-import {useGetUserData} from "@/core/services/queries";
+
 
 
 function NavButton() {
     const [dropDown, setDropdown] = useState(false);
-
     const dropDownHandler = () => {
         setDropdown(!dropDown);
     }
