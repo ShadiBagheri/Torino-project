@@ -4,7 +4,7 @@ import { useGetUserData } from "@/core/services/queries";
 import { BiEditAlt } from "react-icons/bi";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 
-function Info({ infoOpenHandler, email }) {
+function Info({ infoOpenHandler, emailss }) {
     const { data } = useGetUserData();
 
     if (data?.data) return (
@@ -14,11 +14,11 @@ function Info({ infoOpenHandler, email }) {
                 {/*Lg - xl size*/}
                 <div className="hidden lg:flex mt-1 gap-10">
                     <h3 className="mt-0.5 text-sm font-light">شماره موبایل</h3>
-                    <p className="text-sm font-normal mt-1">{data?.data.mobile}</p>
+                    <p className="text-sm font-normal mt-1 mr-3">{data?.data.mobile}</p>
                 </div>
                 <div className="hidden lg:flex gap-20">
                     <h3 className="mt-0.5 text-sm font-light">ایمیل</h3>
-                    <p className="text-sm font-normal mt-1 text-green-500">{email || "—"}</p>
+                    <p className="text-sm font-normal mt-1 text-green-500">{emailss || "—"}</p>
                 </div>
                 <button onClick={infoOpenHandler} className="hidden lg:flex gap-2 text-sm font-normal text-[#009ECA] hover:text-blue-300">
                     <BiEditAlt className="size-4"/>

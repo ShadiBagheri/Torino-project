@@ -24,7 +24,7 @@ function AuthForm({ isLogin ,setIsLogin }) {
     if (data?.data) return (
         <NavButton mobile={mobile} setMobile={setMobile}/>
     )
-    return(
+    return (
         <>
             <SignupBtn isModalOpen={isModalOpen} setIsOpenModal={setIsOpenModal} modalHandler={modalHandler}/>
             <div className="z-10">

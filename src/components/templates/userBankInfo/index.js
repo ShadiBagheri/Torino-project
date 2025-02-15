@@ -15,7 +15,6 @@ function UserBankInfo() {
         accountIdentifier: "",
     });
     const [isBankInfoOpen, setIsBankInfoOpen] = useState(false);
-
     const { data } = useGetUserData();
 
     const bankOpenHandler = () => {
@@ -23,11 +22,12 @@ function UserBankInfo() {
     }
 
     if (data?.data) return (
-        <BankForm isBankInfoOpen={isBankInfoOpen}
-                  setIsBankInfoOpen={setIsBankInfoOpen}
-                  bankForm={bankForm} setBankForm={setBankForm}
-                  bankOpenHandler={bankOpenHandler}
-        />
+        <>
+            {!isBankInfoOpen ?
+                <BankForm isBankInfoOpen={isBankInfoOpen} setIsBankInfoOpen={setIsBankInfoOpen} bankForm={bankForm} setBankForm={setBankForm} bankOpenHandler={bankOpenHandler}/> :
+                <EditBankForm isBankInfoOpen={isBankInfoOpen} setIsBankInfoOpen={setIsBankInfoOpen} bankForm={bankForm} setBankForm={setBankForm}/>
+            }
+        </>
     )
 }
 

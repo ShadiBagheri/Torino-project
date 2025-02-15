@@ -9,7 +9,7 @@ import EditInfo from "@/components/templates/userInfo/EditInfo";
 
 function UserInfo() {
     const [isInfoOpen, setIsInfoOpen] = useState(false);
-    const [email, setEmail] = useState("");
+    const [emailss, setEmail] = useState("");
 
     const { data } = useGetUserData();
 
@@ -31,7 +31,7 @@ function UserInfo() {
         return (
             <>
                 { !isInfoOpen ?
-                    <Info isInfoOpen={isInfoOpen} setIsInfoOpen={setIsInfoOpen} infoOpenHandler={infoOpenHandler} email={email}/> :
+                    <Info isInfoOpen={isInfoOpen} setIsInfoOpen={setIsInfoOpen} infoOpenHandler={infoOpenHandler} emailss={emailss}/> :
                     <EditInfo isInfoOpen={isInfoOpen} setIsInfoOpen={setIsInfoOpen} emailUpdateHandler={emailUpdateHandler}/>
                 }
             </>

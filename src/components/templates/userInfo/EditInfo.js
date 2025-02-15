@@ -4,19 +4,20 @@ import { useEditUserInfoProfile } from "@/core/services/mutation";
 //Toastify
 import { toast } from "react-toastify";
 
-function EditInfo({ isInfoOpen, setIsInfoOpen ,emailUpdateHandler }) {
-    const [infoForm, setInfoForm] = useState({ email: "" });
+function EditInfo(props) {
+    const { isInfoOpen, setIsInfoOpen, emailss, setEmail } = props;
     const [error, setError] = useState({ email: "" });
+
 
     const changeHandler = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        setInfoForm((infoForm) => ({ ...infoForm, [name]: value }));
+        setEmail((emailss) => ({ ...emailss, [name]: value }));
         setError((error) => ({ ...error, [name]: "" }));
     };
 
     const { mutate } = useEditUserInfoProfile();
-    const { email } = infoForm;
+    const { email  } = emailss; // تغییر نام به emailValue
 
     const validate = () => {
         let error = {};
@@ -33,15 +34,16 @@ function EditInfo({ isInfoOpen, setIsInfoOpen ,emailUpdateHandler }) {
             return;
         }
 
-        mutate({ infoForm }, {
+        mutate({ emailss }, {
             onSuccess: (data) => {
                 console.log(data?.data);
-                emailUpdateHandler(email); // Call the handler to update the email in UserInfo
+                // emailUpdateHandler(email); // Call the handler to update the email in UserInfo
                 toast.success(data?.data?.message);
                 setIsInfoOpen(!isInfoOpen)
             },
             onError: (error) => {
                 console.log(error);
+                toast.error("خطایی در به‌روزرسانی اطلاعات پیش آمد");
             }
         });
     };
@@ -61,7 +63,7 @@ function EditInfo({ isInfoOpen, setIsInfoOpen ,emailUpdateHandler }) {
                             className="-mr-2 absolute flex px-3 pb-2 pt-4 w-full text-sm font-normal text-gray-600 bg-[#fff] rounded-[5px] border-2 border-gray-400 appearance-none focus:outline-none focus:border-gray-400 peer"
                             placeholder=" "
                             name="email"
-                            value={infoForm.email}
+                            value={emailss.email}
                             onChange={changeHandler}
                         />
                         <label htmlFor="email"
@@ -81,7 +83,7 @@ function EditInfo({ isInfoOpen, setIsInfoOpen ,emailUpdateHandler }) {
                             type="email"
                             placeholder="آدرس ایمیل"
                             name="email"
-                            value={infoForm.email}
+                            value={emailss.email}
                             onChange={changeHandler}
                         />
                     </div>
