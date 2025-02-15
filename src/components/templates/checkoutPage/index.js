@@ -28,10 +28,7 @@ function CheckoutPage() {
         gender: "",
         birthDate: "",
     })
-    // const { data, isPending } = useGetBasket();
     const { mutate } = useCheckout();
-
-    // console.log("data", data)
 
     const changeHandler = (event) => {
         const name = event.target.name;
@@ -39,6 +36,7 @@ function CheckoutPage() {
         setForm(form => ({...form ,[name] : value}));
         setError(error => ({...error, [name]: ""}));
     }
+
     const dateChangeHandler = (value) => {
         setForm(form => ({...form, birthDate: value.format("YYYY/MM/DD")}));
     }
@@ -49,7 +47,7 @@ function CheckoutPage() {
         let error = {};
 
         if (!fullName.trim()) error.fullName = "لطفا نام و نام خانوادگی را وارد کنید!";
-        if (!code.length > 10 || code.length === "") error.code = "لطفا کدملی نامعتبر است!";
+        if (!code.length > 10 || code.length === "") error.code = " کدملی نامعتبر است!";
         if (!gender) error.gender = "لطفا جنسیت را وارد کنید!";
         if (!birthDate) error.birthDate = "لطفا تاریخ تولد را وارد کنید!";
 

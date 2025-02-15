@@ -52,6 +52,7 @@ function EditBankForm({ isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm
             setError(newErrors);
             return;
         }
+
         if (isPending) return;
         mutate(
             { payment: bankForm },
@@ -63,6 +64,7 @@ function EditBankForm({ isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm
                 },
                 onError: (error) => {
                     console.log(error)
+                    // toast.error("در گرفتن اطلاعات خطایی پیش آمده است!");
                 },
             }
         );

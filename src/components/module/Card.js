@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import {ToPersianNumber} from "topersiannumber";
 
 function Card(props) {
     const {id, title, image, price ,options, fleetVehicle} = props;
