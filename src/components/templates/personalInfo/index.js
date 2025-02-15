@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
+//Queries
+import { useGetUserData } from "@/core/services/queries";
 //Templates
 import PersonalForm from "@/components/templates/personalInfo/PersonalForm";
 import EditPersonalForm from "@/components/templates/personalInfo/EditPersonalForm";
-import {useGetUserData} from "@/core/services/queries";
 
 function PersonalInfo() {
     const [personalForm, setPersonalForm] = useState({

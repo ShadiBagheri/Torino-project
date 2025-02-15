@@ -7,7 +7,6 @@ import { useGetUserData } from "@/core/services/queries";
 import BankForm from "@/components/templates/userBankInfo/BankForm";
 import EditBankForm from "@/components/templates/userBankInfo/EditBankForm";
 
-
 function UserBankInfo() {
     const [bankForm, setBankForm] = useState({
         shaba_code: "",

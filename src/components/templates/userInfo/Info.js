@@ -4,7 +4,7 @@ import { useGetUserData } from "@/core/services/queries";
 import { BiEditAlt } from "react-icons/bi";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 
-function Info({ infoOpenHandler, emailss }) {
+function Info({ infoOpenHandler, infoForm }) {
     const { data } = useGetUserData();
 
     if (data?.data) return (
@@ -16,9 +16,11 @@ function Info({ infoOpenHandler, emailss }) {
                     <h3 className="mt-0.5 text-sm font-light">شماره موبایل</h3>
                     <p className="text-sm font-normal mt-1 mr-3">{data?.data.mobile}</p>
                 </div>
-                <div className="hidden lg:flex gap-20">
+                <div className="hidden lg:flex mr-16 gap-20">
                     <h3 className="mt-0.5 text-sm font-light">ایمیل</h3>
-                    <p className="text-sm font-normal mt-1 text-green-500">{emailss || "—"}</p>
+                    <p className="text-sm font-normal mt-1 ml-24">
+                        {infoForm.email || <TfiLayoutLineSolid className="mt-1 -mr-1"/>}
+                    </p>
                 </div>
                 <button onClick={infoOpenHandler} className="hidden lg:flex gap-2 text-sm font-normal text-[#009ECA] hover:text-blue-300">
                     <BiEditAlt className="size-4"/>
@@ -30,9 +32,11 @@ function Info({ infoOpenHandler, emailss }) {
                     <p className="mt-1 md:mt-3 lg:mt-1 text-sm font-normal md:text-base">{data?.data.mobile}</p>
                 </div>
                 <div className="flex items-center justify-between w-full mt-5 md:mt-3 lg:hidden">
-                    <div className="flex ">
+                    <div className="flex">
                         <h3 className="mt-0.5 text-sm font-light md:text-base">ایمیل</h3>
-                        <TfiLayoutLineSolid className="mt-1 mr-10 md:mt-2 md:mr-20" />
+                        <p className="text-xs md:text-sm font-normal mt-2 mr-4 sm:mr-10 md:mr-16">
+                            {infoForm.email || <TfiLayoutLineSolid className="mt-1 mr-10 md:-mt-0.5 md:mr-2"/>}
+                        </p>
                     </div>
                     <button onClick={infoOpenHandler} className="flex text-[13px] font-normal md:text-base text-[#009ECA] hover:text-blue-300">
                         <BiEditAlt className="ml-1 size-4 md:size-5" />

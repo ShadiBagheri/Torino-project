@@ -1,7 +1,8 @@
+//Queries
+import { useGetUserData } from "@/core/services/queries";
 //Icons
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import { BiEditAlt } from "react-icons/bi";
-import { useGetUserData } from "@/core/services/queries";
 
 function PersonalForm({ personalForm, personalOpenHandler }) {
     const { data } = useGetUserData();

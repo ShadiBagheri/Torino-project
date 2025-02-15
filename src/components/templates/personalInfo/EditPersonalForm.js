@@ -1,7 +1,7 @@
 "use client";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 //Services
-import {useEditPersonalInfo, useEditUserBankAccount} from "@/core/services/mutation";
+import { useEditPersonalInfo } from "@/core/services/mutation";
 //Icons
 import { IoCalendarOutline } from "react-icons/io5";
 //Date Picker
@@ -85,7 +85,6 @@ function EditPersonalForm({ isPersonalOpen, setIsPersonalOpen, personalForm, set
             }
         );
     }
-
     const cancelBankFormHandler = () =>  setIsPersonalOpen(!isPersonalOpen);
 
     return(
@@ -147,10 +146,10 @@ function EditPersonalForm({ isPersonalOpen, setIsPersonalOpen, personalForm, set
                                 }}
                             />
                         </div>
-                        {!!error?.birthDate && (<p className="mt-3 text-red-700 font-medium text-xs z-10">{error?.birthDate}</p>)}
+                        {!!error?.birthDate && (<p className="mt-2 text-red-700 font-medium text-xs z-10">{error?.birthDate}</p>)}
                     </div>
                     <div className="flex flex-col h-[70px]">
-                        <div className="w-full h-[40px] -mt-1 md:w-[298px] md:h-[43px] lg:w-[220px] lg:h-[45px] xl:w-[280px] xl:h-[45px] px-2 relative">
+                        <div className="w-full h-[40px] mt-1 md:w-[298px] md:h-[43px] lg:w-[220px] lg:h-[45px] xl:w-[280px] xl:h-[45px] px-2 relative">
                             <select id="gender" name="gender" onChange={changeHandler} className="-mr-2 absolute flex px-3 pb-2 pt-3 w-full text-sm font-normal text-gray-600 bg-[#fff] rounded-[5px] border-2 border-gray-400 focus:outline-none focus:border-gray-400 peer">
                                 <option value="">جنسیت</option>
                                 <option value="مرد">مرد</option>

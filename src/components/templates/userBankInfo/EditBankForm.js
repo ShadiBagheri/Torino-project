@@ -64,7 +64,7 @@ function EditBankForm({ isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm
                 },
                 onError: (error) => {
                     console.log(error)
-                    // toast.error("در گرفتن اطلاعات خطایی پیش آمده است!");
+                    toast.error("!خطایی پیش آمده است");
                 },
             }
         );

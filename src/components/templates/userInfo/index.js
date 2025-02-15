@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 //Queries
 import { useGetUserData } from "@/core/services/queries";
 //Templates
@@ -8,34 +8,23 @@ import Info from "@/components/templates/userInfo/Info";
 import EditInfo from "@/components/templates/userInfo/EditInfo";
 
 function UserInfo() {
+    const [infoForm, setInfoForm] = useState({ email: "" });
     const [isInfoOpen, setIsInfoOpen] = useState(false);
-    const [emailss, setEmail] = useState("");
 
     const { data } = useGetUserData();
-
-    useEffect(() => {
-        if (data?.data?.email) {
-            setEmail(data.data.email);
-        }
-    },[data]);
 
     const infoOpenHandler = () => {
         setIsInfoOpen(!isInfoOpen);
     };
 
-    const emailUpdateHandler = (newEmail) => {
-        setEmail(newEmail);
-    };
-
-    if (data?.data)
-        return (
-            <>
-                { !isInfoOpen ?
-                    <Info isInfoOpen={isInfoOpen} setIsInfoOpen={setIsInfoOpen} infoOpenHandler={infoOpenHandler} emailss={emailss}/> :
-                    <EditInfo isInfoOpen={isInfoOpen} setIsInfoOpen={setIsInfoOpen} emailUpdateHandler={emailUpdateHandler}/>
-                }
-            </>
-        );
+    if (data?.data) return (
+        <>
+            {!isInfoOpen ?
+                <Info isInfoOpen={isInfoOpen} setIsInfoOpen={setIsInfoOpen} infoOpenHandler={infoOpenHandler} infoForm={infoForm}/> :
+                <EditInfo isInfoOpen={isInfoOpen} setIsInfoOpen={setIsInfoOpen} infoForm={infoForm} setInfoForm={setInfoForm}/>
+            }
+        </>
+    );
 }
 
 export default UserInfo;

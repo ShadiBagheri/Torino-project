@@ -1,11 +1,8 @@
-//Queries
-import { useGetUserData } from "@/core/services/queries";
 //Icons
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import { BiEditAlt } from "react-icons/bi";
 
 function BankForm({ bankOpenHandler, bankForm }) {
-
     return (
         <div className="flex flex-col w-full h-[205px] md:h-[220px] lg:w-[750px] lg:h-[180px] xl:w-[950px] xl:h-[185px] lg:py-2 lg:px-3 py-4 px-5 md:px-10 border-2 rounded-[10px] bg-[#fff]">
             <div className="flex items-center justify-between mt-2">
