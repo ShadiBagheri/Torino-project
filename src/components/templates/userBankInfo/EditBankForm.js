@@ -29,7 +29,6 @@ function EditBankForm({ isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm
                 accountIdentifier: bankForm?.accountIdentifier,
             })
         }
-        console.log("this is data", bankForm)
     }, []);
 
     const bankFormValidation = () => {
@@ -53,7 +52,6 @@ function EditBankForm({ isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm
             setError(newErrors);
             return;
         }
-
         if (isPending) return;
         mutate(
             { payment: bankForm },
@@ -69,7 +67,6 @@ function EditBankForm({ isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm
             }
         );
     }
-
     const cancelBankFormHandler = () => setIsBankInfoOpen(!isBankInfoOpen);
 
     return(
