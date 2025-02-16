@@ -3,10 +3,10 @@ import { useState } from "react";
 import { useEditUserInfoProfile } from "@/core/services/mutation";
 //Toastify
 import { toast } from "react-toastify";
-import {isValidateEmail} from "@/core/utils/validation";
+import { isValidateEmail } from "@/core/utils/validation";
 
 function EditInfo({ isInfoOpen, setIsInfoOpen, infoForm, setInfoForm }) {
-    const [error, setError] = useState({ email: "" });
+    const [error, setError] = useState("");
 
     const changeHandler = (event) => {
         const name = event.target.name;
@@ -15,17 +15,25 @@ function EditInfo({ isInfoOpen, setIsInfoOpen, infoForm, setInfoForm }) {
         setError((error) => ({ ...error, [name]: "" }));
     };
 
-    const { mutate } = useEditUserInfoProfile();
+    const { mutate, isPending } = useEditUserInfoProfile();
     const { email  } = infoForm;
 
+    const validateMail = () => {
+        let error = {};
+        if (email.length !== "/^[^\s@]+@[^\s@]+\.[^\s@]+$/") { error.email = "لطفا ایمیل معتبر وارد کنید!";}
+        return error;
+    }
 
     const editInfoHandler = (event) => {
         event.preventDefault();
 
-        if (!isValidateEmail(infoForm)) return setError("لطفا ایمیل را به درستی وارد کنید!");
-        setError("");
+        const newErrors = validateMail(infoForm);
+        if (Object.keys(newErrors).length > 0) {
+            setError(newErrors);
+            return;
+        }
 
-
+        if (isPending) return;
         mutate({ infoForm }, {
             onSuccess: (data) => {
                 console.log(data?.data);

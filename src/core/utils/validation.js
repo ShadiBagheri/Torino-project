@@ -3,9 +3,9 @@ const isValidateMobile = (val) => {
     return mobile;
 };
 
-const isValidateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+const isValidateEmail = (val) => {
+    let emailPattern = new RegExp("/^[^\s@]+@[^\s@]+\.[^\s@]+$/");
+    return emailPattern.test(val);
 };
 
 export { isValidateMobile, isValidateEmail };

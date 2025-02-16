@@ -16,7 +16,7 @@ function Info({ infoOpenHandler, infoForm }) {
                     <h3 className="mt-0.5 text-sm font-light">شماره موبایل</h3>
                     <p className="text-sm font-normal mt-1 mr-3">{data?.data.mobile}</p>
                 </div>
-                <div className="hidden lg:flex mr-16 gap-20">
+                <div className="hidden lg:flex mr-20 gap-20">
                     <h3 className="mt-0.5 text-sm font-light">ایمیل</h3>
                     <p className="text-sm font-normal mt-1 ml-24">
                         {infoForm.email || <TfiLayoutLineSolid className="mt-1 -mr-1"/>}
