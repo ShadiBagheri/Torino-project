@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 //Services
 import { serverDataFetch } from "@/core/services/http";
 //Template
-import ReservationBtn from "@/components/templates/ReservationBtn";
+import ReservationBtn from "@/components/atoms/ReservationBtn";
+
 //Icons
 import { IoMap } from "react-icons/io5";
 import { TbRoute } from "react-icons/tb";
@@ -19,8 +19,8 @@ async function TourDetails({ params }) {
     });
 
     return (
-        <div className="container flex items-center w-full lg:h-screen mx-auto py-10 px-10 lg:bg-[#F3F3F3]">
-            <div className="flex flex-col mt-5 mb-16 mx-auto lg:w-[1270px] lg:h-[427px] lg:mt-0 lg:mb-0 lg:py-8 lg:px-6 lg:bg-[#fff] lg:border rounded-[10px]">
+        <div className="flex items-center w-full lg:h-screen mx-auto py-10 px-10 lg:bg-[#F3F3F3]">
+            <div className="container flex flex-col mt-5 mb-16 mx-auto lg:w-[1270px] lg:h-[427px] lg:mt-0 lg:mb-0 lg:py-8 lg:px-6 lg:bg-[#fff] lg:border rounded-[10px]">
                 <div className="flex flex-col lg:flex-row items-center justify-between lg:w-full gap-10 mx-auto">
                     <Image className="w-full h-[220px] sm:h-[380px] md:h-[450px] lg:w-[397px] lg:h-[265px] rounded-xl" src={tourData.image} width={400} height={400} alt="img"/>
                     <div className="container w-full flex flex-col -mt-5 items-center justify-between mx-auto lg:mt-0">
@@ -48,7 +48,7 @@ async function TourDetails({ params }) {
                                 <h1 className="mt-3 text-[28px] font-medium text-[#009ECA]">{tourData.price}
                                     <span className="mr-2 text-sm font-normal text-[#282828]">تومان</span>
                                 </h1>
-                                <ReservationBtn id={params.id}/>
+                            <ReservationBtn id={params.tourId}/>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@ async function TourDetails({ params }) {
                     <h1 className="mt-3 text-2xl font-medium text-[#009ECA]">{tourData.price}
                         <span className="mr-2 text-[10px] font-normal text-[#282828]">تومان</span>
                     </h1>
-                    <ReservationBtn id={params.id}/>
+                    <ReservationBtn id={params.tourId}/>
                 </div>
             </div>
         </div>

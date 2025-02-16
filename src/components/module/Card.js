@@ -24,7 +24,7 @@ function Card(props) {
                         <p className="mr-2 text-xs text-gray-500">تومان</p>
                     </h3>
                     <button className="w-[64px] h-[25px] text-[#fff] bg-[#28A745] hover:bg-green-700 rounded">
-                        <Link href={`/tours/${id}`}> رزرو</Link>
+                        <Link href={`/tours/${id}`}>رزرو</Link>
                     </button>
                 </div>
             </div>

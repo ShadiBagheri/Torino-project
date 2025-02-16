@@ -3,7 +3,7 @@ import Card from "@/components/module/Card";
 import NotFound from "@/app/404/page";
 
 export async function ToursList({ data }) {
-    // if (!data) return "محصولی یافت نشد!";
+    // if (!data) return "توری یافت نشد!";
     if(!data.length) return <NotFound/>;
 
     return(

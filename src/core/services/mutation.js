@@ -48,6 +48,11 @@ const useEditUserBankAccount = () => {
     return useMutation({ mutationFn, onSuccess });
 }
 
+const useAddToBasket = () => {
+    const mutationFn = (id) => api.put(`basket/${id}`);
+    return useMutation({ mutationFn })
+}
+
 const useCheckout = () => {
     const queryClient = useQueryClient();
     const mutationFn = (data) => api.post("order", data);
@@ -64,4 +69,6 @@ export {
     useEditUserInfoProfile,
     useEditPersonalInfo,
     useEditUserBankAccount,
-    useCheckout };
+    useAddToBasket,
+    useCheckout,
+};

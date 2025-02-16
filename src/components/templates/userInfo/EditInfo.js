@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useEditUserInfoProfile } from "@/core/services/mutation";
 //Toastify
 import { toast } from "react-toastify";
-import { isValidateEmail } from "@/core/utils/validation";
 
 function EditInfo({ isInfoOpen, setIsInfoOpen, infoForm, setInfoForm }) {
     const [error, setError] = useState("");
