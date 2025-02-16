@@ -8,6 +8,7 @@ function ReservationBtn({ id }) {
     const { mutate, isPending } = useAddToBasket();
 
     const reserveBtnHandler = () => {
+
         if (isPending) return;
         mutate( id,
             {
