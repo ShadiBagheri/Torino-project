@@ -15,10 +15,10 @@ async function Home({ searchParams }) {
     return (
         <>
             <Banner/>
-            <SearchBox data={toursData}/>
+            {/*<SearchBox data={toursData}/>*/}
             <ToursList data={toursData}/>
             <Contact/>
-            <Slider/>
+            {/*<Slider/>*/}
             <BaseFooter/>
         </>
     );

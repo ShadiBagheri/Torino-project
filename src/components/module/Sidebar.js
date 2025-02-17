@@ -18,8 +18,10 @@ function Sidebar(){
     const closeHandler = () => {
         setSidebar(close);
     }
+
+
     return(
-        <div className="container flex flex-col w-full lg:hidden mx-auto relative">
+        <div className="container flex flex-col w-full lg:hidden mx-auto relative z-20">
             <div className="flex items-center justify-between w-full mx-auto z-0">
                 <button onClick={sidebarHandler}>
                     <Image className="w-[20px] h-[16px] sm:w-[35px] sm:h-[25px] md:w-[40px] md:h-[30px] z-0" src="/images/menu.png" width={28} height={34} alt="menu"/>

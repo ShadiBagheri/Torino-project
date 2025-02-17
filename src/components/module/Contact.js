@@ -4,9 +4,9 @@ import Link from "next/link";
 
 function Contact() {
     return(
-        <div className="flex items-center justify-between w-full mx-aut mt-28 mb-16">
-            <div className="flex items-center w-[1270px] h-[251px] mx-auto border-2 rounded-[10px]">
-                <div className="flex items-center justify-between w-[950px] h-[251px] px-16 bg-[#28A745] rounded-[10px]">
+        <div className="flex items-center justify-between w-full mx-aut mt-28 mb-16 border-green-100">
+            <div className="container flex items-center lg:w-[1270px] lg:h-[251px] mx-auto border-2 rounded-[10px]">
+                <div className="flex items-center justify-between xl:w-[950px] xl:h-[251px] px-16 bg-[#28A745] rounded-[10px]">
                     <div className="-mt-5 tracking-wider">
                         <h1 className="text-5xl font-extrabold text-[#fff] tracking-wider">
                             خرید تلفی از
