@@ -6,9 +6,14 @@ import QueryString from "qs";
 const useGetUserData = () => {
     const queryFn = () => api.get("user/profile");
     const queryKey = ["user-data"];
-
     return useQuery({ queryFn, queryKey });
 };
+
+const useGetUserTours = () => {
+    const queryFn = () => api.get("user/tours");
+    const queryKey = ["user_tours"];
+    return useQuery({ queryFn, queryKey });
+}
 
 const useGetTours = (query) => {
     const url = "tour?" + QueryString.stringify(query);
@@ -25,5 +30,5 @@ const useGetBasket = () => {
     return useQuery({ queryFn, queryKey });
 }
 
-export { useGetUserData, useGetTours, useGetBasket };
+export { useGetUserData, useGetUserTours, useGetTours, useGetBasket };
 

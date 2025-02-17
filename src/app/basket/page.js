@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
+//Services
+import { useCheckout } from "@/core/services/mutation";
 //Queries
 import { useGetBasket } from "@/core/services/queries";
 //Date Picker
@@ -16,6 +17,7 @@ import opacity from "react-element-popper/animations/opacity";
 import "react-multi-date-picker/styles/colors/green.css";
 //Toastify
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 function BasketPage() {
     const [ form, setForm ] = useState({
@@ -31,7 +33,9 @@ function BasketPage() {
         birthDate: "",
     })
     const router = useRouter();
+    const { mutate } = useCheckout();
     const { data, isPending } = useGetBasket();
+
 
     const changeHandler = (event) => {
         const name = event.target.name;
@@ -71,24 +75,35 @@ function BasketPage() {
             setError(validationErrors);
             return;
         }
-        router.push("/checkout");
 
         if (isPending) {
             toast.info("در حال پردازش...");
             return;
         }
+
+        mutate(form ,{
+            onSuccess: (data) => {
+                console.log(data?.data);
+                toast.success(data?.data?.message);
+                router.push("/payment?status=success");
+            },
+            onError: (error) => {
+                console.log(error)
+            }
+        })
     };
 
     if (!data || !data.data) {
         return (
             <div>
-                <h1>سبد خرید خالی است!</h1>
+                <h1>توری یافت نشد!</h1>
                 <Link href="/">
                     برو به صفحه اصلی
                 </Link>
             </div>
         )
     }
+
     return(
         <div className="flex w-full h-full mx-auto lg:h-screen px-10 lg:bg-[#F3F3F3]">
             <div className="container flex items-center justify-between w-full h-full lg:w-[1270px] lg:h-[240px] xl:h-[250px] my-10 mx-auto">
