@@ -17,7 +17,6 @@ const useCheckOtp = () => {
         setCookie("refreshToken", data?.data?.refreshToken, 365);
         queryClient.invalidateQueries({ queryKey: ["user-data"] });
     };
-
     return useMutation({ mutationFn, onSuccess });
 };
 
@@ -59,7 +58,6 @@ const useCheckout = () => {
     const onSuccess = () => {
         queryClient.invalidateQueries({ queryKey: ["user/tours"] });
     }
-
     return useMutation({ mutationFn, onSuccess });
 }
 
