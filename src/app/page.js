@@ -18,7 +18,7 @@ async function Home({ searchParams }) {
             {/*<SearchBox data={toursData}/>*/}
             <ToursList data={toursData}/>
             <Contact/>
-            {/*<Slider/>*/}
+            <Slider/>
             <BaseFooter/>
         </>
     );

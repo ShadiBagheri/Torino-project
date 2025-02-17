@@ -14,8 +14,8 @@ import Image from "next/image";
 
 function Slider() {
     return (
-        <div className="flex w-full">
-            <div className="flex items-center justify-between w-[1270px] h-[570px] mt-10 mx-auto px-14">
+        <div className="flex w-full bg-yellow-300 lg:px-10">
+            <div className="container flex items-center justify-between lg:w-[1270px] lg:h-[570px] mt-10 mx-auto">
                 <div className="flex flex-col items-start">
                     <div className="flex">
                         <div className=" relative">
@@ -42,7 +42,6 @@ function Slider() {
                 <div className="ml-16">
                     <Swiper
                         effect={'cards'}
-                        // grabCursor={true}
                         pagination={{
                             type: 'fraction',
                         }}
@@ -51,16 +50,16 @@ function Slider() {
                         className="mySwiper "
                     >
                         <SwiperSlide>
-                            <Image className="w-[599px] h-[580px]" src="/images/s1.png" width={600} height={600} alt="slide1"/>
+                            <Image className="lg:w-[599px] lg:h-[580px]" src="/images/s1.png" width={600} height={600} alt="slide1"/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Image className="w-[599px] h-[580px]" src="/images/s2.png" width={600} height={600} alt="slide2"/>
+                            <Image className="lg:w-[599px] lg:h-[580px]" src="/images/s2.png" width={600} height={600} alt="slide2"/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Image className="w-[599px] h-[580px]" src="/images/s3.png" width={600} height={600} alt="slide3"/>
+                            <Image className="lg:w-[599px] lg:h-[580px]" src="/images/s3.png" width={600} height={600} alt="slide3"/>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <Image className="w-[599px] h-[580px]" src="/images/s4.png" width={600} height={600} alt="slide4"/>
+                            <Image className="lg:w-[599px] lg:h-[580px]" src="/images/s4.png" width={600} height={600} alt="slide4"/>
                         </SwiperSlide>
                     </Swiper>
                 </div>
