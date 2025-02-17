@@ -1,9 +1,9 @@
 //Icons
-import { ImAirplane } from "react-icons/im";
-import {RiSunFoggyFill} from "react-icons/ri";
+import { RiSunFoggyFill } from "react-icons/ri";
 
 function MyToursList(props) {
     const { title, name, fleetVehicle, origin, destination, start, end, endTime, price, tourNumber, } = props;
+
     return(
         <div className="container flex flex-col w-full h-[202px] sm:h-[180px] md:h-[170px] mx-auto mb-5 py-4 border-2 rounded-[10px] bg-[#fff]">
             <div className="container flex flex-col px-2 md:px-5">
