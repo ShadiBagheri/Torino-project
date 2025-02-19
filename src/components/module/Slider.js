@@ -13,6 +13,7 @@ import Image from "next/image";
 
 
 function Slider() {
+    
     return (
         <div className="flex w-full bg-yellow-300 lg:px-10">
             <div className="container flex items-center justify-between lg:w-[1270px] lg:h-[570px] mt-10 mx-auto">
