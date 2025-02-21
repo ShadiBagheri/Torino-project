@@ -1,10 +1,15 @@
 //Module
 import Card from "@/components/module/Card";
-import NotFound from "@/app/404/page";
+
 
 export async function ToursList({ data }) {
-    // if (!data) return "توری یافت نشد!";
-    if(!data.length) return <NotFound/>;
+    if (!data.length) return (
+        <div className="flex items-center w-full mx-auto my-14 px-5 sm:px-10">
+            <div className="container flex items-center w-[390px] sm:w-[500px] md:w-[600px] lg:w-[1270px] h-[200px] mx-auto shadow-md rounded-lg px-10 bg-[#fff]">
+                <h1 className="mx-auto py-2 px-3 text-2xl lg:text-3xl border-b-2 border-[#28A745]">توری یافت نشد!</h1>
+            </div>
+        </div>
+    )
 
     return(
         <div className="flex items-center w-full mx-auto my-14 bg-[#fff]">

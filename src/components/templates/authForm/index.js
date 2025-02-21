@@ -9,6 +9,7 @@ import SendOTP from "@/components/templates/authForm/SendOTP";
 //Module
 import NavButton from "@/components/module/NavButton";
 import SignupBtn from "@/components/module/SignupBtn";
+import SignupBtnSm from "@/components/module/SignupBtnSm";
 
 
 function AuthForm({ isLogin ,setIsLogin }) {
@@ -18,7 +19,10 @@ function AuthForm({ isLogin ,setIsLogin }) {
 
     const { data } = useGetUserData();
 
-    const modalHandler = () => setIsOpenModal(!isModalOpen);
+    const modalHandler = () => {
+        console.log("open")
+        setIsOpenModal(!isModalOpen)
+    };
     const closeModal = () => setIsOpenModal(true);
 
     if (data?.data) return (
@@ -27,6 +31,7 @@ function AuthForm({ isLogin ,setIsLogin }) {
     return (
         <>
             <SignupBtn isModalOpen={isModalOpen} setIsOpenModal={setIsOpenModal} modalHandler={modalHandler}/>
+            <SignupBtnSm isModalOpen={isModalOpen} setIsOpenModal={setIsOpenModal} modalHandler={modalHandler}/>
             <div className="z-10">
                 {!isModalOpen && step === 1 && (<SendOTP setStep={setStep} mobile={mobile} setMobile={setMobile} closeModal={closeModal} setIsLogin={setIsLogin}/>)}
                 {step === 2 && (<CheckOTP setStep={setStep} mobile={mobile} setIsOpenModal={setIsOpenModal} isLogin={isLogin} setIsLogin={setIsLogin}/>)}

@@ -7,6 +7,9 @@ import { RiHome5Fill } from "react-icons/ri";
 import { CiVolumeHigh } from "react-icons/ci";
 import { LuPhone } from "react-icons/lu";
 import { BsAirplane } from "react-icons/bs";
+import SignupBtn from "@/components/module/SignupBtn";
+import AuthForm from "@/components/templates/authForm";
+import SignupBtnSm from "@/components/module/SignupBtnSm";
 
 function Sidebar(){
     const pathName = usePathname();
@@ -21,14 +24,12 @@ function Sidebar(){
 
 
     return(
-        <div className="container flex flex-col w-full lg:hidden mx-auto relative z-20">
+        <div className="container flex flex-col lg:hidden mx-auto bg-red-300 relative">
             <div className="flex items-center justify-between w-full mx-auto z-0">
                 <button onClick={sidebarHandler}>
                     <Image className="w-[20px] h-[16px] sm:w-[35px] sm:h-[25px] md:w-[40px] md:h-[30px] z-0" src="/images/menu.png" width={28} height={34} alt="menu"/>
                 </button>
-                <button>
-                    <Image className="w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[45px] md:h-[45px] z-0" src="/images/signin.png" width={40} height={40} alt="signin"/>
-                </button>
+                {/*<SignupBtnSm/>*/}
             </div>
             {/* Sidebar */}
             {sidebar ?
@@ -62,6 +63,9 @@ function Sidebar(){
                                 </li>
                             </ul>
                         </nav>
+                    </div>
+                    <div className="z-10">
+                        <AuthForm/>
                     </div>
                 </div> : null}
         </div>

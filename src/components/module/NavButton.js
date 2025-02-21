@@ -1,6 +1,6 @@
 "use client";
 
-import { useState} from "react";
+import { useState } from "react";
 import Image from "next/image";
 //Queries
 import { useGetUserData } from "@/core/services/queries";
