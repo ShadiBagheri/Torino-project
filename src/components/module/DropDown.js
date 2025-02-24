@@ -7,9 +7,9 @@ import Link from "next/link";
 function DropDown({ mobile }) {
 
 return(
-        <div className="flex w-[246px] h-[152px] mt-52 -ms-7 bg-[#fff] rounded-[11px] z-10 absolute">
+        <div className="flex w-[246px] h-[152px] mt-52 -ms-7 bg-[#fff] border-2 rounded-[11px] z-10 absolute">
             <div className="flex flex-col items-start justify-between">
-                <div className="flex w-[246px] h-[44px] py-2 px-3 bg-gray-100 rounded-t-[11px]">
+                <div className="flex w-[245px] h-[44px] py-2 px-3 bg-gray-100 rounded-t-[11px]">
                     <Image className="w-[24px] h-[24px] mt-1 p-1 bg-gray-300 rounded-2xl" src="/images/frame.png" width={20} height={20} alt="icon"/>
                     <h2 className="mt-1.5 mr-3 text-base font-medium text-[#10411B]">{mobile}</h2>
                 </div>

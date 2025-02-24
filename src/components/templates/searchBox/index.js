@@ -99,7 +99,7 @@ function SearchBox() {
                                     />
                                 </div>
                             </div>
-                            <button type="submit" className="mt-8 lg:mt-0 ml-2 w-full h-[45px] lg:w-[220px] xl:w-[240px] md:h-[51px] bg-[#28A745] hover:bg-green-700 text-[#fff] text-xl md:text-2xl font-normal rounded-2xl">
+                            <button type="submit" className="mt-8 lg:mt-0 lg:ml-2 w-full h-[45px] lg:w-[220px] xl:w-[240px] md:h-[51px] bg-[#28A745] hover:bg-green-700 text-[#fff] text-xl md:text-2xl font-normal rounded-2xl">
                                 جستجو
                             </button>
                         </div>

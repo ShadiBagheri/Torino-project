@@ -32,7 +32,7 @@ function Sidebar(){
                 {/*<SignupBtnSm/>*/}
             </div>
             {/* Sidebar */}
-            {sidebar ?
+            {!sidebar &&
                 <div onClick={closeHandler} className="w-full h-full top-0 start-0 backdrop-blur-sm bg-black/20 fixed transition-all">
                     <div className="md:w-[250px] h-full py-10 px-3 rounded-tl-[12px] rounded-bl-[12px] z-10 bg-[#fff] absolute">
                         <nav>
@@ -64,10 +64,10 @@ function Sidebar(){
                             </ul>
                         </nav>
                     </div>
-                    <div className="z-10">
-                        <AuthForm/>
-                    </div>
-                </div> : null}
+                    {/*<div className="z-10">*/}
+                    {/*    <AuthForm/>*/}
+                    {/*</div>*/}
+                </div>}
         </div>
     )
 }
