@@ -7,19 +7,28 @@ import Image from "next/image";
 import Sidebar from "@/components/module/Sidebar";
 import AuthForm from "@/components/templates/authForm";
 import SignupBtnSm from "@/components/module/SignupBtnSm";
+import {useState} from "react";
 
 
 function Header() {
     const pathName = usePathname();
+    const [sidebar, setSidebar] = useState(false);
+
+    const sidebarHandler = () => setSidebar(!sidebar);
+    const closeHandler = () => setSidebar(!sidebar);
 
     return(
         <header className="flex items-center w-full mx-auto h-[64px] md:h-[70px] lg:h-[74px] py-3 px-10 lg:px-0 bg-[#fff] shadow-md dark:bg-slate-800 dark:shadow-white">
-            {/*<Sidebar/>*/}
-            <div className="flex lg:hidden items-center justify-between w-full mx-auto z-0">
-                <button>
-                    <Image className="w-[20px] h-[16px] sm:w-[35px] sm:h-[25px] md:w-[40px] md:h-[30px] z-0" src="/images/menu.png" width={28} height={34} alt="menu"/>
-                </button>
-                <SignupBtnSm/>
+            <div className="flex lg:hidden items-center justify-between w-full mx-auto z-10">
+                <div>
+                    <button onClick={sidebarHandler}>
+                        <Image className="w-[20px] h-[16px] sm:w-[35px] sm:h-[25px] md:w-[38px] md:h-[28px] z-0" src="/images/menu.png" width={28} height={34} alt="menu"/>
+                    </button>
+                    {sidebar && <Sidebar closeHandler={closeHandler}/>}
+                </div>
+                <div className="z-10">
+                    <AuthForm/>
+                </div>
             </div>
             {/*lg size*/}
             <div className="container hidden lg:flex items-center justify-between w-[1270px] mt-1 mx-auto">
