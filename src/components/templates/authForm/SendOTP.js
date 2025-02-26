@@ -40,23 +40,25 @@ function SendOTP(props) {
     };
 
     return(
-        <div className="w-full h-full top-0 start-0 backdrop-blur-sm bg-black/20 fixed">
-            <div className="flex items-center w-[561px] h-[362px] my-[12%] mx-auto p-5 bg-[#fff] rounded-[20px]">
+        <div className="w-full h-full top-0 start-0 backdrop-blur-sm bg-black/20 fixed transition duration-700 ease-in-out">
+            <div className="flex items-center w-[300px] h-[250px] sm:w-[410px] sm:h-[300px] md:w-[460px] md:h-[340px] lg:w-[510px] lg:h-[350px] xl:w-[561px] xl:h-[362px] my-[34%] sm:my-[17%] md:my-[11%] lg:my-[8%] xl:my-[12%] mx-auto p-5 bg-[#fff] rounded-[20px]">
                 <div className="flex flex-col items-center w-full h-full mx-auto relative">
-                    <IoClose onClick={closeModal} className="top-0 end-0 text-gray-600 size-5 absolute cursor-pointer"/>
-                    <h1 className="my-9 mx-auto text-[28px] font-semibold text-[#282828] tracking-wider">ورود به تورینو</h1>
-                    <form onSubmit={submitHandler} className="flex flex-col">
-                        <div className="flex flex-col mb-9 text-start">
-                            <label className="w-[200px] h-[25px] text-base font-normal text-gray-600 mb-3 tracking-wide">شماره موبایل خود را وارد کنید</label>
-                            <input className="w-[491px] h-[54px] px-3 border-2 border-gray-300 bg-[#fff] text-gray-500 rounded-lg outline-0"
-                                   type="text"
-                                   placeholder="۰۹۱۲۳۳۳۲۳۲۳"
-                                   value={mobile}
-                                   onChange={(e) => setMobile(e.target.value)}
-                            />
+                    <IoClose onClick={closeModal} className="top-0 end-0 text-gray-600 size-4 sm:size-5 absolute cursor-pointer"/>
+                    <h1 className="my-6 sm:my-8 md:my-9 mx-auto text-lg sm:text-xl md:text-2xl xl:text-[28px] font-semibold text-[#282828] tracking-wider">ورود به تورینو</h1>
+                    <form onSubmit={submitHandler} className="flex flex-col items-center">
+                        <div className="flex flex-col items-start">
+                            <div className="flex flex-col mb-7 md:mb-9 mx-auto text-start">
+                                <label className="w-[200px] h-[25px] text-xs sm:text-sm md:text-base font-normal text-gray-600 sm:mb-2 md:mb-3 tracking-wide">شماره موبایل خود را وارد کنید</label>
+                                <input className="w-[230px] h-[35px] sm:w-[340px] sm:h-[45px] md:w-[390px] md:h-[50px] lg:w-[430px] lg:h-[54px] xl:w-[491px] px-3 border-2 border-gray-300 bg-[#fff] text-gray-500 rounded-lg outline-0"
+                                       type="text"
+                                       placeholder="۰۹۱۲۳۳۳۲۳۲۳"
+                                       value={mobile}
+                                       onChange={(e) => setMobile(e.target.value)}
+                                />
+                            </div>
+                            {!!error && <p className="-mt-7 mb-3 text-xs md:text-sm text-red-600">{error}</p>}
                         </div>
-                        {!!error && <p className="-mt-7 mb-3 text-sm text-red-600">{error}</p>}
-                        <button type="submit" disabled={isPending} className="w-[491px] h-[54px] bg-[#28A745] text-md font-semibold text-[#fff] rounded-lg tracking-wider hover:text-[#28A745] hover:bg-green-700 hover:text-[#fff]">
+                        <button type="submit" disabled={isPending} className="w-[230px] h-[35px] sm:w-[340px] sm:h-[45px] md:w-[390px] md:h-[50px] lg:w-[430px] lg:h-[54px] xl:w-[491px] bg-[#28A745] text-sm sm:text-base font-semibold text-[#fff] rounded-lg tracking-wider hover:text-[#28A745] hover:bg-green-700 hover:text-[#fff]">
                             {!isPending ? "ارسال کد تایید" : "در حال ارسال"}
                         </button>
                     </form>
