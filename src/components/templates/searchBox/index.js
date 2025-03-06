@@ -62,12 +62,12 @@ function SearchBox() {
                                         </select>
                                     </div>
                                     <div className="flex w-full lg:w-[155px] xl:w-[210px] mr-4 px-3 lg:px-0 lg:mr-2 rounded-xl border-2 lg:border-0 lg:border-l-2">
-                                        <TbWorldSearch className="mt-3 md:mt-2 xl:mt-1 text-gray-600 lg:text-[#282828] size-4 md:size-5 lg:size-6 xl:size-7"/>
+                                        <TbWorldSearch className="mt-3 md:mt-2 xl:mt-1.5 text-gray-600 lg:text-[#282828] size-4 md:size-5 lg:size-6 xl:size-7"/>
                                         <select {...register("destinationId")} className="flex items-center w-full h-[45px] lg:w-[210px] md:h-[51px] mr-1 xl:mr-2 xl:pl-5 text-base md:text-xl font-normal bg-[#fff] border-0 outline-0 appearance-none text-gray-600 lg:text-[#282828]">
                                             <option value="" className="rounded-lg bg-white">مقصد</option>
                                             <option value="1" className="text-[13px] bg-[#F8F8F8] rounded-2xl">پرتردد</option>
                                             <option value="2" className="text-sm">تهران</option>
-                                            <option value="3" className="text-sm">سنندج</option>
+                                            <option value="3" className="text-sm">مادرید</option>
                                             <option value="4" className="text-sm">اصفهان</option>
                                             <option value="5" className="text-sm">سلیمانیه</option>
                                             <option value="6" className="text-sm">ایتالیا</option>

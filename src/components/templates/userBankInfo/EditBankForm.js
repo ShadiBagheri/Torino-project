@@ -1,8 +1,11 @@
 import {useEffect, useState} from "react";
 //Services
 import { useEditUserBankAccount } from "@/core/services/mutation";
+//Utils
+import { p2e } from "@/core/utils/numbers";
 //Toastify
 import { toast } from "react-toastify";
+
 
 
 function EditBankForm({ isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm }) {
@@ -81,7 +84,7 @@ function EditBankForm({ isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm
                             <input type="text" id="shaba_code" name="shaba_code"
                                    className="-mr-2 absolute flex px-3 pb-2 pt-4 w-full text-sm font-normal text-gray-600 bg-[#fff] rounded-[5px] border-2 border-gray-400 appearance-none focus:outline-none focus:border-gray-400 peer"
                                    placeholder=" "
-                                   value={bankForm.shaba_code}
+                                   value={p2e(bankForm.shaba_code)}
                                    onChange={changeHandler}
                             />
                             <label htmlFor="shaba_code"
@@ -96,7 +99,7 @@ function EditBankForm({ isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm
                             <input type="text" id="debitCard_code" name="debitCard_code"
                                    className="-mr-2 absolute flex px-3 pb-2 pt-4 w-full text-sm font-normal text-gray-600 bg-[#fff] rounded-[5px] border-2 border-gray-400 appearance-none focus:outline-none focus:border-gray-400 peer"
                                    placeholder=" "
-                                   value={bankForm.debitCard_code}
+                                   value={p2e(bankForm.debitCard_code)}
                                    onChange={changeHandler}
                             />
                             <label htmlFor="debitCard_code"
@@ -111,7 +114,7 @@ function EditBankForm({ isBankInfoOpen, setIsBankInfoOpen, bankForm, setBankForm
                             <input type="text" id="accountIdentifier" name="accountIdentifier"
                                    className="-mr-2 absolute flex px-3 pb-2 pt-4 w-full text-sm font-normal text-gray-600 bg-[#fff] rounded-[5px] border-2 border-gray-400 appearance-none focus:outline-none focus:border-gray-400 peer"
                                    placeholder=" "
-                                   value={bankForm.accountIdentifier}
+                                   value={p2e(bankForm.accountIdentifier)}
                                    onChange={changeHandler}
                             />
                             <label htmlFor="accountIdentifier"

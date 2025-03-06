@@ -3,6 +3,7 @@ import { useGetUserData } from "@/core/services/queries";
 //Icons
 import { BiEditAlt } from "react-icons/bi";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
+import {e2p} from "@/core/utils/numbers";
 
 function Info({ infoOpenHandler, infoForm }) {
     const { data } = useGetUserData();
@@ -14,7 +15,7 @@ function Info({ infoOpenHandler, infoForm }) {
                 {/*Lg - xl size*/}
                 <div className="hidden lg:flex mt-1 gap-10">
                     <h3 className="mt-0.5 text-sm font-light">شماره موبایل</h3>
-                    <p className="text-sm font-normal mt-1 mr-3">{data?.data.mobile}</p>
+                    <p className="text-sm font-normal mt-1 mr-3">{e2p(data?.data.mobile)}</p>
                 </div>
                 <div className="hidden lg:flex mr-20 gap-20">
                     <h3 className="mt-0.5 text-sm font-light">ایمیل</h3>

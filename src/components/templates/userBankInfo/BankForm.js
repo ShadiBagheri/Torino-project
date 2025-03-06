@@ -1,3 +1,5 @@
+//Utils
+import { e2p } from "@/core/utils/numbers";
 //Icons
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import { BiEditAlt } from "react-icons/bi";
@@ -16,19 +18,19 @@ function BankForm({ bankOpenHandler, bankForm }) {
                 <div className="flex items-center justify-between lg:relative">
                     <h3 className="mt-0.5 text-sm font-light md:text-base lg:text-sm">شماره شبا</h3>
                     <p className="text-sm font-normal mt-0.5 lg:mr-36 lg:absolute">
-                        {bankForm.shaba_code || <TfiLayoutLineSolid className="-mt-1 ml-10 lg:-mt-2 lg:absolute"/> }
+                        {e2p(bankForm.shaba_code) || <TfiLayoutLineSolid className="-mt-1 ml-10 lg:-mt-2 lg:absolute"/> }
                     </p>
                 </div>
                 <div className="flex items-center justify-between lg:mr-14 lg:relative">
                     <h3 className="mt-0.5 text-sm font-light md:text-base lg:text-sm">شماره کارت</h3>
                     <p className="text-sm font-normal mt-0.5 lg:mr-28 lg:absolute">
-                        {bankForm.debitCard_code || <TfiLayoutLineSolid className="-mt-1 ml-10 lg:-mt-2 lg:absolute"/> }
+                        {e2p(bankForm.debitCard_code) || <TfiLayoutLineSolid className="-mt-1 ml-10 lg:-mt-2 lg:absolute"/> }
                     </p>
                 </div>
                 <div className="flex items-center justify-between lg:relative">
                     <h3 className="mt-0.5 text-sm font-light md:text-base lg:text-sm">شماره حساب</h3>
                     <p className="text-sm font-normal mt-0.5 lg:mr-36 lg:absolute">
-                        {bankForm.accountIdentifier || <TfiLayoutLineSolid className="-mt-1 ml-10 lg:-mt-2 lg:absolute"/> }
+                        {e2p(bankForm.accountIdentifier) || <TfiLayoutLineSolid className="-mt-1 ml-10 lg:-mt-2 lg:absolute"/> }
                     </p>
                 </div>
             </div>

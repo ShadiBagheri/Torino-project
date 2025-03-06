@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 //Services
 import { useEditPersonalInfo } from "@/core/services/mutation";
+//Utils
+import { p2e } from "@/core/utils/numbers";
 //Icons
 import { IoCalendarOutline } from "react-icons/io5";
 //Date Picker
@@ -112,7 +114,7 @@ function EditPersonalForm({ isPersonalOpen, setIsPersonalOpen, personalForm, set
                             <input type="number" id="nationalCode" name="nationalCode"
                                    className="-mr-2 absolute flex px-3 pb-2 pt-4 w-full text-sm font-normal text-gray-600 bg-[#fff] rounded-[5px] border-2 border-gray-400 appearance-none focus:outline-none focus:border-gray-400 peer"
                                    placeholder=" "
-                                   value={personalForm.nationalCode}
+                                   value={p2e(personalForm.nationalCode)}
                                    onChange={changeHandler}
                             />
                             <label htmlFor="nationalCode"

@@ -5,9 +5,11 @@ import { useState } from "react";
 import { useSendOtp } from "@/core/services/mutation";
 //Utils
 import { isValidateMobile } from "@/core/utils/validation";
+import { p2e } from "@/core/utils/numbers";
 //Icons
 import { IoClose } from "react-icons/io5";
 import { toast } from "react-toastify";
+
 
 
 function SendOTP(props) {
@@ -27,7 +29,6 @@ function SendOTP(props) {
             { mobile },
             {
                 onSuccess: (data) => {
-                    console.log(data?.data?.code);
                     toast.success(data?.data?.message);
                     toast(data?.data?.code);
                     setStep(2);
@@ -52,7 +53,7 @@ function SendOTP(props) {
                                 <input className="w-[230px] h-[35px] sm:w-[340px] sm:h-[45px] md:w-[390px] md:h-[50px] lg:w-[430px] lg:h-[54px] xl:w-[491px] px-3 border-2 border-gray-300 bg-[#fff] text-gray-500 rounded-lg outline-0"
                                        type="text"
                                        placeholder="۰۹۱۲۳۳۳۲۳۲۳"
-                                       value={mobile}
+                                       value={p2e(mobile)}
                                        onChange={(e) => setMobile(e.target.value)}
                                 />
                             </div>

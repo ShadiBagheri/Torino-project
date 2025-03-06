@@ -1,9 +1,10 @@
 import Image from "next/image";
 //Services
 import { serverDataFetch } from "@/core/services/http";
+//Utils
+import { e2p, sp } from "@/core/utils/numbers";
 //Template
 import ReservationBtn from "@/components/atoms/ReservationBtn";
-
 //Icons
 import { IoMap } from "react-icons/io5";
 import { TbRoute } from "react-icons/tb";
@@ -27,7 +28,7 @@ async function TourDetails({ params }) {
                         <div className="w-full flex flex-col items-center md:items-start md:mt-4 lg:mt-0">
                             <div className="flex items-center justify-between w-full md:flex-col md:items-start">
                                 <h1 className="text-2xl lg:text-[32px] font-bold">{tourData.title}</h1>
-                                <h3 className="text-[15px] font-medium md:mt-4 lg:mt-6 lg:mr-0 md:text-lg lg:text-xl lg:font-normal text-[#282828]">{tourData.time}</h3>
+                                <h3 className="text-[15px] font-medium md:mt-4 lg:mt-6 lg:mr-0 md:text-lg lg:text-xl lg:font-normal text-[#282828]">{e2p(tourData.time)}</h3>
                             </div>
                             <div className="flex lg:items-start mt-4 gap-7 lg:mt-8 lg:gap-8">
                                 <div className="flex">
@@ -45,7 +46,7 @@ async function TourDetails({ params }) {
                             </div>
                         </div>
                         <div className="hidden lg:flex items-center justify-between w-full mx-auto mt-10">
-                                <h1 className="mt-3 text-[28px] font-medium text-[#009ECA]">{tourData.price}
+                                <h1 className="mt-3 text-[28px] font-medium text-[#009ECA]">{sp(tourData.price)}
                                     <span className="mr-2 text-sm font-normal text-[#282828]">تومان</span>
                                 </h1>
                             <ReservationBtn id={params.tourId}/>
@@ -66,14 +67,14 @@ async function TourDetails({ params }) {
                             <LuCalendarArrowUp className="mt-0.5 ml-2 size-3 lg:size-4"/>
                             <p className="text-sm lg:text-lg font-normal text-gray-500">تاریخ رفت</p>
                         </div>
-                        <p className="mt-2 text-xs lg:text-base font-medium">{tourData.start}</p>
+                        <p className="mt-2 text-xs lg:text-base font-medium">{new Date(tourData.start).toLocaleDateString("fa-IR")}</p>
                     </div>
                     <div className="flex flex-col items-center lg:items-start lg:pl-14 lg:h-[85px] lg:border-l-2">
                         <div className="flex mt-2">
                             <LuCalendarArrowDown className="mt-0.5 ml-2 size-3 lg:size-4"/>
                             <p className="text-sm lg:text-lg font-normal text-gray-500">تاریخ برگشت</p>
                         </div>
-                        <p className="mt-2 text-xs lg:text-base font-medium">{tourData.end}</p>
+                        <p className="mt-2 text-xs lg:text-base font-medium">{new Date(tourData.end).toLocaleDateString("fa-IR")}</p>
                     </div>
                     <div className="flex flex-col items-center lg:items-start lg:pl-14 lg:h-[85px] lg:border-l-2">
                         <div className="flex mt-2">
@@ -88,7 +89,7 @@ async function TourDetails({ params }) {
                             <p className="text-sm lg:text-lg font-normal text-gray-500">ظرفیت</p>
                         </div>
                         <p className="mt-2 text-xs lg:text-base font-medium">
-                            حداکثر{tourData.availableSeats} نفر
+                            حداکثر{e2p(tourData.availableSeats)} نفر
                         </p>
                     </div>
                     <div className="flex flex-col items-center lg:items-start lg:pl-14 lg:h-[85px]">
@@ -100,7 +101,7 @@ async function TourDetails({ params }) {
                     </div>
                 </div>
                 <div className="flex flex-row-reverse lg:hidden items-center justify-between mt-8">
-                    <h1 className="mt-3 text-2xl font-medium text-[#009ECA]">{tourData.price}
+                    <h1 className="mt-3 text-2xl font-medium text-[#009ECA]">{sp(tourData.price)}
                         <span className="mr-2 text-[10px] font-normal text-[#282828]">تومان</span>
                     </h1>
                     <ReservationBtn id={params.tourId}/>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {e2p} from "@/core/utils/numbers";
 
 function BaseFooter() {
     return(
@@ -16,14 +17,14 @@ function BaseFooter() {
                         <Image className="w-[90px] h-[84px] md:w-[97px] md:h-[90px] lg:w-[109.03px] lg:h-[99.12px]" src="/images/Group 17.png" width={109.03} height={99.12} alt="Group 17"/>
                         <div className="flex flex-col mt-1 md:mt-3 lg:mt-1 items-start mr-6 lg:mr-2">
                             <h1 className="mb-1 text-xl md:text-2xl font-semibold text-[#282828] dark:text-white">پشتیبانی</h1>
-                            <p className="md:mt-1 lg:mt-0 text-lg font-light md:font-normal lg:text-base text-[#282828] dark:text-white">پشتیبانی و همراهی 24 ساعته در تمامی مراحل سفر شما.</p>
+                            <p className="md:mt-1 lg:mt-0 text-lg font-light md:font-normal lg:text-base text-[#282828] dark:text-white">پشتیبانی و همراهی {e2p(24)} ساعته در تمامی مراحل سفر شما.</p>
                         </div>
                     </div>
                     <div className="flex w-full lg:w-[304.08px] lg:h-[106.99px] md:items-center lg:mr-3">
                         <Image className="w-[94px] h-[84px] md:w-[98px] md:h-[90px] lg:w-[104.8px] lg:h-[104.8px]" src="/images/Group 18.png" width={104.8} height={104.8} alt="Group 18"/>
                         <div className="flex flex-col mt-2 md:mt-3 lg:mt-1 items-start mr-6 lg:mr-2">
                             <h1 className="mb-1 text-xl md:text-2xl font-semibold text-[#282828] dark:text-white">رضایت کاربران</h1>
-                            <p className="md:mt-1 lg:mt-0 text-lg font-light md:font-normal lg:text-base text-[#282828] dark:text-white">رضایت بیش از 10 هزار کاربر از تورهای ما.</p>
+                            <p className="md:mt-1 lg:mt-0 text-lg font-light md:font-normal lg:text-base text-[#282828] dark:text-white">رضایت بیش از {e2p(1000)} کاربر از تورهای ما.</p>
                         </div>
                     </div>
                 </div>

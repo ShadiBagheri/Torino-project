@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEditUserInfoProfile } from "@/core/services/mutation";
 //Toastify
 import { toast } from "react-toastify";
+import {e2p} from "@/core/utils/numbers";
 
 function EditInfo({ isInfoOpen, setIsInfoOpen, infoForm, setInfoForm }) {
     const [error, setError] = useState("");
@@ -52,7 +53,7 @@ function EditInfo({ isInfoOpen, setIsInfoOpen, infoForm, setInfoForm }) {
             <div className="flex flex-col md:flex-row items-center justify-between w-full mx-auto mt-4 md:mt-8 lg:mt-1 lg:pr-5 lg:pl-3 md:gap-10">
                 <div className="flex items-center justify-between w-full md:w-[180px]">
                     <h3 className="mt-0.5 text-sm font-light md:text-base lg:text-sm">شماره موبایل</h3>
-                    <p className="text-sm font-normal mt-1 md:text-base lg:text-sm">09193855854</p>
+                    <p className="text-sm font-normal mt-1 md:text-base lg:text-sm">{e2p("09193855854")}</p>
                 </div>
                 {/* md - lg size */}
                 <form onSubmit={editInfoHandler} className="hidden md:flex items-center justify-between mt-6 md:mt-3 lg:mr-5">

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { sp } from "@/core/utils/numbers";
 
 function Card(props) {
     const {id, title, image, price ,options, fleetVehicle} = props;
@@ -20,7 +21,7 @@ function Card(props) {
                 </div>
                 <div className="flex flex-row-reverse items-center justify-between mt-2 sm:mt-2 md:mt-2 p-2 sm:p-3 md:p-2 border-t-2 rounded-b-[10px]">
                     <h3 className="flex items-center text-[#009ECA] text-base sm:text-lg md:text-base font-normal">
-                        {price}
+                        {sp(price)}
                         <p className="mr-2 text-xs text-base md:text-xs text-gray-500">تومان</p>
                     </h3>
                     <button className="w-[100px] h-[30px] sm:w-[120px] sm:h-[40px] md:w-[70px] md:h-[30px] lg:w-[64px] lg:h-[25px] text-[#fff] bg-[#28A745] hover:bg-green-700 rounded">

@@ -14,14 +14,13 @@ function Header() {
     const pathName = usePathname();
     const [sidebar, setSidebar] = useState(false);
 
-    const sidebarHandler = () => setSidebar(!sidebar);
     const closeHandler = () => setSidebar(!sidebar);
 
     return(
         <header className="flex items-center w-full mx-auto h-[64px] md:h-[70px] lg:h-[74px] py-3 px-10 lg:px-0 bg-[#fff] shadow-md dark:bg-slate-800 dark:shadow-white">
             <div className="flex lg:hidden items-center justify-between w-full mx-auto z-10">
                 <div>
-                    <button onClick={sidebarHandler} className="mt-3">
+                    <button onClick={() => setSidebar(!sidebar)} className="mt-3">
                         <Image className="w-[20px] h-[16px] sm:w-[30px] sm:h-[20px] md:w-[35px] md:h-[25px] z-0" src="/images/menu.png" width={28} height={34} alt="menu"/>
                     </button>
                     {sidebar && <Sidebar closeHandler={closeHandler}/>}

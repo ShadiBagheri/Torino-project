@@ -11,7 +11,23 @@ module.exports = withMT({
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "slow-spin": "spin 1s linear infinite",
+        "wiggle": "wiggle 250ms linear 3 both",
+        "blur": "blur 1s normal 3s both",
+      },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "scale(165deg)" },
+          "50%": { transform: "rotate(-10deg)" }
+        ,
+          blur: {
+            "0%, 100%": { transition: "all 1s ease-in" },
+          }
+        }
+      }
+    },
   },
   plugins: [],
 });

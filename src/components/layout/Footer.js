@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import {e2p} from "@/core/utils/numbers";
 
 function Footer() {
     return(
@@ -28,7 +29,10 @@ function Footer() {
                 <div className="flex flex-row-reverse lg:flex-col justify-between lg:items-end w-full md:my-4 lg:my-0">
                     <div className="flex flex-col mt-10 items-end px-2 md:p-0">
                         <Image className="w-[110px] h-[30px] sm:w-[130px] sm:h-[36px] md:w-[135px] md:h-[40px] lg:w-[146px] lg:h-[44px]" src="/images/torino.png" width={146} height={44} alt="torino-logo"/>
-                        <h4 className="mt-5 md:mt-6 mb-8 text-sm sm:text-lg md:text-xl font-normal dark:text-white">تلفن پشتیبانی: 8574-021</h4>
+                        <h4 className="mt-5 md:mt-6 mb-8 text-sm sm:text-lg md:text-xl font-normal dark:text-white">
+                             تلفن پشتیبانی :
+                            <span> {e2p("8574 - 021")}</span>
+                        </h4>
                     </div>
                     <div className="flex flex-col-reverse items-center lg:flex-row gap-5 md:gap-10 lg:gap-10">
                         <div className="flex gap-5 md:gap-10 lg:gap-10">
